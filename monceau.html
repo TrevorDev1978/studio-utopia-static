@@ -106,6 +106,26 @@
       transform-origin: bottom center; /* zoom dal basso così resta allineata sotto */
     }
 
+        .project-title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .project-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #000;
+    }
+
+    .project-text strong {
+      font-weight: 600;
+    }
+
     /* Mobile: torna naturale */
     @media (max-width: 768px) {
       .gallery .two-col {
@@ -156,6 +176,25 @@
       <img src="images/Monceau/monceau.png" alt="">
     </div>
 
+    <div style="display:flex; align-items:baseline; margin-bottom:16px;">
+      <div class="project-title">Bleu de Hongrie – Paris XVIIIème</div>
+    </div>
+
+    <div class="project-text">
+      <div>
+        <strong>Maître d'ouvrage :</strong> client particulier<br>
+        <strong>Programme :</strong> Réhabilitation d'un appartement Haussmannien<br>
+        <strong>Missions :</strong> ESQ à OPR<br>
+        <strong>Surface totale construite :</strong> 100 m²<br>
+        <strong>Budget :</strong> entre 55 et 100k<br>
+        <strong>Livraison :</strong> 2025<br>
+        <strong>Photos :</strong> ©Utopia
+      </div>
+      <div style="text-align: justify;">
+        L'appartement avait subi de nombreuses transformations de type « bricolage » au cours des décennies. De la cuisine accessible par un escalier dérobé qui était devenue une chambre au remplacement d'une magnifique fenêtre à fermeture mouton et gueule de loup par une minuscule fenêtre oscillo-battante après l'ajout d'une salle-de-bain étonnamment placée… Les pathologies associées à certains de ces travaux, notamment l'humidité et l'absence de lumière naturelle dans les salles de bain posaient des problèmes à mettre en ordre sans révolutionner l'appartement par ailleurs très bien distribué en étoile. Avec ce projet d'acupuncture, le bel appartement a retrouvé son harmonie, le soin apporté à ses matériaux, sa ventilation et une belle distribution de lumière avec une percée de la salle à manger vers le salon.
+      </div>
+    </div>
+    
     <!-- riga 1 -->
     <div class="two-col">
       <div class="img-box">
