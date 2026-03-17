@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Montmorency BB</title>
+  <title>Petit Marais</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
     body {
       margin: 0;
@@ -22,11 +21,10 @@
       margin-bottom: 48px;
     }
     .row img {
-      width: 100%;
+      width: calc(50% - 20px);
       height: auto;
       display: block;
     }
-
     #header {
       width: 100%;
       text-align: center;
@@ -62,6 +60,25 @@
     #topNav a:hover {
       opacity: 0.7;
     }
+
+    /* ===== TEXTE PROJET ===== */
+    .project-title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .project-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #000;
+    }
+    .project-text strong {
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -69,39 +86,56 @@
 
 <header id="header">
   <div id="logo">
-    <h1 class="logo">
-      <a href="index.html">
-        <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
-      </a>
-    </h1>
+    <a href="index.html">
+      <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+    </a>
   </div>
-
   <div id="topNav">
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="interieur.html">Intérieur</a></li>
-        <li><a href="ephemere.html">Éphémère</a></li>
-        <li><a href="rehabilitation.html">Réhabilitation</a></li>
-        <li><a href="press.html">Press</a></li>
-        <li><a href="studio.html">Studio</a></li>
-        <li><a href="instagram.html">Instagram</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interieur.html">Intérieur</a></li>
+      <li><a href="ephemere.html">Éphémère</a></li>
+      <li><a href="rehabilitation.html">Réhabilitation</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="instagram.html">Instagram</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
 </header>
 
 <div class="container">
+
+  <!-- TITRE ET TEXTE -->
+  <div style="display:flex; align-items:baseline; margin-bottom:16px; margin-top:32px;">
+    <div class="project-title">Petit Marais – Paris IVème</div>
+  </div>
+
+  <div class="project-text">
+    <div>
+      <strong>Maître d'ouvrage :</strong> client particulier<br>
+      <strong>Programme :</strong> Réhabilitation d'un micro appartement tout équipé<br>
+      <strong>Missions :</strong> ESQ à OPR<br>
+      <strong>Surface totale construite :</strong> 8 m²<br>
+      <strong>Budget :</strong> &lt; 25k<br>
+      <strong>Livraison :</strong> 2020<br>
+      <strong>Photos :</strong> ©Utopia
+    </div>
+    <div style="text-align: justify;">
+      L'objectif du propriétaire : ne pas rembourser davantage en mensualité de crédit qu'il ne payait en loyer. Au regard des prix pratiqués dans le 4ème, charge alors à l'architecte, qui s'inspirera des cabines de bateaux, de rationaliser le moindre cm2. Le module de base : le canapé/lit de veuve qui s'ouvre en moins de temps qu'il n'en faut pour le dire. La lumière baigne la pièce en pénétrant l'espace par la large fenêtre de ce bâtiment datant du XVIIIème siècle.
+    </div>
+  </div>
+
+  <!-- PHOTOS -->
   <div class="row">
     <img src="images/montmorency/montmorency1.jpg" alt="">
     <img src="images/montmorency/montmorency2.jpg" alt="">
   </div>
-
   <div class="row">
     <img src="images/montmorency/montmorency3.jpg" alt="">
     <img src="images/montmorency/montmorency4.jpg" alt="">
   </div>
+
 </div>
 
 </body>
