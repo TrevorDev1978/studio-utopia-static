@@ -6,27 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
+    html, body {
       margin: 0;
-      padding-top: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #FAFAF8;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 120px auto;
-      padding: 0 40px;
+      padding: 0;
+      background-color: #FAFAF8;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
-    /* ===== HEADER / LOGO / NAV ===== */
-    #header {
-      width: 100%;
-      text-align: center;
-      margin-top: 40px;
+    /* ===== STRUCTURE SQUARESPACE ===== */
+    #canvas {
+      padding-top: 11px;
     }
+
+    #header {
+      text-align: center;
+      margin-top: 45px;
+      margin-bottom: 0;
+    }
+
     #logo {
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
+
+    #logo h1 {
+      margin: 0;
+      padding: 0;
+      line-height: 1em;
+    }
+
     #logo img {
       display: block;
       margin: 0 auto;
@@ -34,20 +43,24 @@
       height: auto;
       max-width: 325px;
     }
+
     #topNav {
       width: 100%;
       text-align: center;
       margin-top: 18px;
     }
+
     #topNav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     #topNav li {
       display: inline-block;
       margin: 0 12px;
     }
+
     #topNav a {
       color: #575757;
       text-transform: uppercase;
@@ -58,24 +71,37 @@
       font-family: futura-pt, Arial, Helvetica, sans-serif;
       line-height: 1.6em;
     }
+
     #topNav a:hover {
       opacity: 0.7;
     }
 
+    .page-divider {
+      height: 1px;
+      margin-top: 18px;
+      background: transparent;
+    }
+
     /* ===== CONTENU CONTACT ===== */
+    #page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 30px 80px 30px;
+    }
+
     .contact-wrapper {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 80px;
-      margin-top: 60px;
     }
 
-    .contact-wrapper h1 {
-      font-size: 14px;
+    .contact-left h1 {
+      font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin: 0 0 32px 0;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
     /* ===== FORMULAIRE ===== */
@@ -99,7 +125,7 @@
       border-bottom: 1px solid #aaa;
       padding: 8px 0;
       font-size: 13px;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
       color: #000;
       background: transparent;
       outline: none;
@@ -131,7 +157,7 @@
       border: none;
       padding: 10px 28px;
       font-size: 11px;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
       text-transform: uppercase;
       letter-spacing: 1px;
       cursor: pointer;
@@ -145,11 +171,12 @@
 
     /* ===== COORDONNÉES ===== */
     .contact-info h3 {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin: 0 0 16px 0;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
     .contact-info p {
@@ -157,6 +184,7 @@
       line-height: 1.8em;
       margin: 0 0 6px 0;
       color: #000;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
     .contact-info a {
@@ -166,14 +194,6 @@
 
     .contact-info a:hover {
       text-decoration: underline;
-    }
-
-    /* ===== MESSAGE DE CONFIRMATION ===== */
-    .form-success {
-      display: none;
-      font-size: 13px;
-      color: #000;
-      margin-top: 16px;
     }
 
     @media (max-width: 768px) {
@@ -189,69 +209,69 @@
 </head>
 
 <body>
+<div id="canvas">
 
-<header id="header">
-  <div id="logo">
-    <a href="index.html">
-      <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
-    </a>
-  </div>
-
-  <div id="topNav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="interieur.html">Intérieur</a></li>
-      <li><a href="ephemere.html">Éphémère</a></li>
-      <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
-      <li><a href="press.html">Presse</a></li>
-      <li><a href="studio.html">Studio</a></li>
-      <li><a href="instagram.html">Instagram</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
-<div class="container">
-  <div class="contact-wrapper">
-
-    <!-- COLONNE GAUCHE : formulaire -->
-    <div class="contact-left">
-      <h1>Contactez-nous</h1>
-
-      <form
-        class="contact-form"
-        action="https://formsubmit.co/contact@studio-utopia.com"
-        method="POST"
-      >
-        <!-- Redirection après envoi (optionnel) -->
-        <input type="hidden" name="_next" value="contact.html">
-        <!-- Désactiver le captcha FormSubmit -->
-        <input type="hidden" name="_captcha" value="false">
-        <!-- Sujet de l'e-mail reçu -->
-        <input type="hidden" name="_subject" value="Nouveau message — Studio Utopia">
-
-        <div class="field-row">
-          <input type="text" name="prenom" placeholder="Prénom" required>
-          <input type="text" name="nom" placeholder="Nom" required>
-        </div>
-
-        <input type="email" name="email" placeholder="Adresse e-mail" required>
-        <input type="text" name="sujet" placeholder="Sujet" required>
-        <textarea name="message" placeholder="Message" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
+  <header id="header">
+    <div id="logo">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+        </a>
+      </h1>
     </div>
 
-    <!-- COLONNE DROITE : coordonnées -->
-    <div class="contact-info">
-      <h3>Studio Utopia</h3>
-      <p><a href="tel:+33637877149">+33 6 37 87 71 49</a></p>
-      <p><a href="mailto:contact@studio-utopia.com">contact@studio-utopia.com</a></p>
+    <div id="topNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="interieur.html">Intérieur</a></li>
+        <li><a href="ephemere.html">Éphémère</a></li>
+        <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+        <li><a href="press.html">Presse</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instagram.html">Instagram</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
+  </header>
 
-  </div>
+  <div class="page-divider"></div>
+
+  <section id="page">
+    <div class="contact-wrapper">
+
+      <div class="contact-left">
+        <h1>Contactez-nous</h1>
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/contact@studio-utopia.com"
+          method="POST"
+        >
+          <input type="hidden" name="_next" value="contact.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nouveau message — Studio Utopia">
+
+          <div class="field-row">
+            <input type="text" name="prenom" placeholder="Prénom" required>
+            <input type="text" name="nom" placeholder="Nom" required>
+          </div>
+
+          <input type="email" name="email" placeholder="Adresse e-mail" required>
+          <input type="text" name="sujet" placeholder="Sujet" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>Studio Utopia</h3>
+        <p><a href="tel:+33637877149">+33 6 37 87 71 49</a></p>
+        <p><a href="mailto:contact@studio-utopia.com">contact@studio-utopia.com</a></p>
+      </div>
+
+    </div>
+  </section>
+
 </div>
-
 </body>
 </html>
