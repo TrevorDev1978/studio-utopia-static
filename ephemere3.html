@@ -60,24 +60,86 @@
       font-family: futura-pt, Arial, Helvetica, sans-serif !important;
       line-height: 1.6em;
     }
-    #logo img {
-      display: block;
-      margin: 0 auto;
-      width: 325px;
-      max-width: 325px;
-      height: auto;
-    }
+
     #topNav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     #topNav li {
       display: inline-block;
       margin: 0 12px;
     }
 
-    /* solo normalizzazione minima, niente hack sulle immagini */
+    html {
+      overflow-y: scroll;
+    }
+
+    html, body, #canvas {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #header {
+      width: 100% !important;
+      text-align: center !important;
+      margin-top: 12px !important;
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    #logo {
+      margin: 0 !important;
+      padding: 0 !important;
+      text-align: center !important;
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    #logo h1,
+    #logo .logo {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1em !important;
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    #logo a {
+      display: inline-block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #logo img {
+      display: block !important;
+      margin: 0 auto !important;
+      width: 325px !important;
+      max-width: 325px !important;
+      height: auto !important;
+    }
+
+    #topNav {
+      width: 100% !important;
+      text-align: center !important;
+      margin-top: 6px !important;
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+    }
+
     .page-divider,
     .extra-wrapper.page-header,
     #page-header-578d20eaf5e2317f09d41e18 {
@@ -87,6 +149,51 @@
       height: 0 !important;
       overflow: hidden !important;
       border: 0 !important;
+    }
+
+    #page {
+      margin-top: 8px !important;
+      padding-top: 0 !important;
+    }
+
+    #projectThumbs {
+      width: 100% !important;
+      text-align: center !important;
+      margin-top: 8px !important;
+    }
+
+    #projectThumbs > .wrapper {
+      display: inline-block !important;
+      vertical-align: top !important;
+      text-align: left !important;
+      width: 1206px !important;
+      max-width: calc(100vw - 60px) !important;
+      padding: 0 !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+    }
+
+    @media (max-width: 1280px) {
+      #projectThumbs > .wrapper {
+        width: calc(100vw - 60px) !important;
+        max-width: calc(100vw - 60px) !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #logo img {
+        width: 260px !important;
+        max-width: 80vw !important;
+      }
+
+      #topNav li {
+        margin: 0 8px !important;
+      }
+
+      #projectThumbs > .wrapper {
+        width: calc(100vw - 36px) !important;
+        max-width: calc(100vw - 36px) !important;
+      }
     }
   </style>
 </head>
@@ -165,40 +272,40 @@
 
   <script src="../static1.squarespace.com/static/ta/4fd1028ee4b02be53c65dfb3/1362/scripts/site-bundle.js" type="text/javascript"></script>
   <script data-sqs-type="imageloader-bootstrapper">if(window.ImageLoader) window.ImageLoader.bootstrap({}, document);</script>
-  <script>Squarespace.afterBodyLoad(Y);</script>
+  <script>if (window.Squarespace && window.Y) { try { Squarespace.afterBodyLoad(Y); } catch(e) {} }</script>
 
   <script>
     (function () {
       function pinHeaderLikeStudio() {
         var header = document.getElementById('header');
+        var logo = document.getElementById('logo');
         var topNav = document.getElementById('topNav');
         var page = document.getElementById('page');
         var divider = document.querySelector('.page-divider');
         var extra = document.querySelector('.extra-wrapper.page-header');
         var pageHeader = document.getElementById('page-header-578d20eaf5e2317f09d41e18');
-        if (!header || !topNav || !page) return;
+        if (!header || !topNav || !page || !logo) return;
 
-        header.style.setProperty('width', '100%', 'important');
-        header.style.setProperty('text-align', 'center', 'important');
-        header.style.setProperty('margin-top', '40px', 'important');
-        header.style.setProperty('margin-bottom', '0', 'important');
+        header.style.setProperty('margin-top', '12px', 'important');
         header.style.setProperty('padding', '0', 'important');
-        header.style.setProperty('position', 'relative', 'important');
         header.style.setProperty('top', '0', 'important');
         header.style.setProperty('left', '0', 'important');
         header.style.setProperty('transform', 'none', 'important');
 
-        topNav.style.setProperty('width', '100%', 'important');
-        topNav.style.setProperty('text-align', 'center', 'important');
-        topNav.style.setProperty('margin-top', '12px', 'important');
+        logo.style.setProperty('margin', '0', 'important');
+        logo.style.setProperty('padding', '0', 'important');
+        logo.style.setProperty('top', '0', 'important');
+        logo.style.setProperty('left', '0', 'important');
+        logo.style.setProperty('transform', 'none', 'important');
+
+        topNav.style.setProperty('margin-top', '6px', 'important');
         topNav.style.setProperty('margin-bottom', '0', 'important');
         topNav.style.setProperty('padding', '0', 'important');
-        topNav.style.setProperty('position', 'relative', 'important');
         topNav.style.setProperty('top', '0', 'important');
         topNav.style.setProperty('left', '0', 'important');
         topNav.style.setProperty('transform', 'none', 'important');
 
-        page.style.setProperty('margin-top', '10px', 'important');
+        page.style.setProperty('margin-top', '8px', 'important');
         page.style.setProperty('padding-top', '0', 'important');
 
         if (divider) {
