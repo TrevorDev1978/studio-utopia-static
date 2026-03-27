@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interiors — kellybehun | STUDIO</title>
-  <meta name="description" content="Atelier Utopia interiors and architecture projects." />
-  <link rel="stylesheet" type="text/css" href="../static1.squarespace.com/static/sitecss/578bbbc546c3c4caeeca2291/111/4fd11f32c4aad9b01c9e624c/578d2062f5e2317f09d4183b/1362/site.css" />
+  <meta charset="utf-8">
+  <title>Interiors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atelier Utopia interiors and architecture projects.">
+  <link rel="stylesheet" type="text/css" href="../static1.squarespace.com/static/sitecss/578bbbc546c3c4caeeca2291/111/4fd11f32c4aad9b01c9e624c/578d2062f5e2317f09d4183b/1362/site.css">
 
   <style>
     html {
@@ -13,9 +13,14 @@
     }
 
     html, body {
-      margin: 0 !important;
-      padding: 0 !important;
+      margin: 0;
+      padding: 0;
       background: #FAFAF8;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000;
     }
 
     body,
@@ -25,11 +30,22 @@
       padding-top: 0 !important;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    .page-divider,
+    .extra-wrapper.page-header,
+    #projectPages,
+    .project-controls,
+    .extra-wrapper.page-footer,
+    #footer,
+    #mobileNav,
+    #mobileMenuLink {
+      display: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      border: 0 !important;
     }
 
-    /* header uguale alla pagina studio */
     #header {
       width: 100% !important;
       text-align: center !important;
@@ -55,6 +71,12 @@
       line-height: 1em !important;
     }
 
+    #logo a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
     #logo img {
       display: block !important;
       margin: 0 auto !important;
@@ -66,7 +88,7 @@
     #topNav {
       width: 100% !important;
       text-align: center !important;
-      margin: 18px 0 0 0 !important;
+      margin: 12px 0 0 0 !important;
       padding: 0 !important;
       position: relative !important;
       left: 0 !important;
@@ -83,7 +105,7 @@
     #topNav li {
       display: inline-block !important;
       margin: 0 12px !important;
-      float: none !important;
+      position: static !important;
     }
 
     #topNav a {
@@ -101,100 +123,89 @@
       opacity: 0.7;
     }
 
-    .page-divider,
-    .extra-wrapper.page-header,
-    #projectPages,
-    .project-controls,
-    .extra-wrapper.page-footer,
-    #footer,
-    #mobileNav,
-    #mobileMenuLink {
-      display: none !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      height: 0 !important;
-      min-height: 0 !important;
-      border: 0 !important;
+    .container {
+      max-width: 1200px;
+      margin: 60px auto 0 auto;
+      padding: 0 30px 80px 30px;
+      box-sizing: border-box;
     }
 
-    .main-nav,
-    .main-nav ul,
-    .main-nav li {
-      position: static !important;
-    }
-
-    #page {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-    /* SOLO contenitore esterno. Non tocchiamo la meccanica interna delle card */
     #projectThumbs {
-      width: 100% !important;
-      margin: 60px 0 0 0 !important;
-      padding: 0 !important;
-      position: static !important;
-      left: auto !important;
-      right: auto !important;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
       clear: both !important;
     }
 
     #projectThumbs > .wrapper {
-      max-width: 1200px !important;
-      margin: 0 auto !important;
-      padding: 0 30px 80px !important;
-      box-sizing: border-box !important;
-      overflow: visible !important;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
     }
 
-    /* allineamento griglia come studio, ma lasciando overlay e struttura originali */
-    #projectThumbs > .wrapper::after {
-      content: "";
-      display: block;
-      clear: both;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 42px 28px;
+      align-items: start;
     }
 
-    #projectThumbs a.project {
-      width: calc((100% - 56px) / 3) !important;
-      margin: 0 28px 42px 0 !important;
-      float: left !important;
-      clear: none !important;
-      box-sizing: border-box !important;
-      position: relative !important;
-      left: auto !important;
-      top: auto !important;
+    .projects-grid a.project {
+      width: 100%;
+      max-width: none;
+      margin: 0 !important;
+      float: none !important;
+      display: block !important;
+      text-decoration: none;
+      color: inherit;
     }
 
-    #projectThumbs a.project:nth-child(3n) {
-      margin-right: 0 !important;
-    }
-
-    /* importantissimo: NON tocchiamo immagini/intrinsic/content-fill/overlay */
-    #projectThumbs .project-image,
-    #projectThumbs .intrinsic,
-    #projectThumbs .content-fill,
-    #projectThumbs .project-title,
-    #projectThumbs .project-item-count {
+    .projects-grid .project-image {
+      width: 100%;
+      margin: 0;
       position: relative;
     }
 
-    @media (max-width: 980px) {
-      #projectThumbs a.project {
-        width: calc((100% - 28px) / 2) !important;
-        margin: 0 28px 32px 0 !important;
-      }
-
-      #projectThumbs a.project:nth-child(3n) {
-        margin-right: 28px !important;
-      }
-
-      #projectThumbs a.project:nth-child(2n) {
-        margin-right: 0 !important;
-      }
+    .projects-grid .intrinsic {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      overflow: hidden;
+      background: #f1f1ed;
     }
 
-    #canvas > header:first-child {
-      margin-top: 40px !important;
+    .projects-grid .content-fill {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .projects-grid .content-fill img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      display: block;
+    }
+
+    .projects-grid .project-item-count {
+      display: none !important;
+    }
+
+    .projects-grid .project-title {
+      margin-top: 0;
+    }
+
+    @media (max-width: 980px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
@@ -207,150 +218,137 @@
         margin: 0 8px !important;
       }
 
-      #projectThumbs {
-        margin-top: 40px !important;
+      .container {
+        margin-top: 40px;
+        padding: 0 18px 60px 18px;
       }
 
-      #projectThumbs > .wrapper {
-        padding: 0 18px 60px !important;
-      }
-
-      #projectThumbs a.project {
-        width: 100% !important;
-        margin: 0 0 30px 0 !important;
-        float: none !important;
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
     }
   </style>
 </head>
 
-<body class="blog-sidebar-display-auto index-thumb-title-position-overlay index-item-layout-center thumbnail-layout-basic-grid thumbnails-on-open-page-show-all layout-style-center page-borders-none gallery-page-controls-tiny-thumbnails social-icon-style-normal show-category-navigation event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label event-list-show-cats event-list-date event-list-time event-list-address event-icalgcal-links event-excerpts event-item-back-link product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square show-product-price show-product-item-nav product-social-sharing tweak-v1-related-products-image-aspect-ratio-11-square tweak-v1-related-products-details-alignment-center newsletter-style-dark hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-outline medium-button-shape-pill large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-index collection-layout-default collection-578d20eaf5e2317f09d41e18 view-list mobile-style-available logo-image has-primary-nav" id="collection-578d20eaf5e2317f09d41e18">
+<body class="index-thumb-title-position-overlay index-item-layout-center thumbnail-layout-basic-grid thumbnails-on-open-page-show-all layout-style-center logo-image has-primary-nav">
 
-  <div id="canvas">
-
-    <header id="header">
-      <div id="logo" data-content-field="site-title">
-        <h1 class="logo">
-          <a href="index.html">
-            <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO" />
-          </a>
-        </h1>
-      </div>
-
-      <div id="topNav" data-content-field="navigation">
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="interieur.html">Intérieur</a></li>
-            <li><a href="ephemere.html">Éphémère</a></li>
-            <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
-            <li><a href="press.html">Presse</a></li>
-            <li><a href="studio.html">Studio</a></li>
-            <li><a href="instagram.html">Instagram</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <section id="page" role="main" data-content-field="main-content">
-      <div id="projectThumbs">
-        <div class="wrapper">
-
-          <a class="project" href="/anatole.html" onclick="window.location.href=this.href; return false;">
-            <div>
-              <div class="project-image">
-                <div class="intrinsic">
-                  <div class="content-fill">
-                    <img data-src="images/home3.jpg" data-image="images/home3.jpg" alt="home3.jpg" data-load="false" src="images/home3.jpg" />
-                    <noscript><img src="images/home3.jpg" alt="home3.jpg"></noscript>
-                  </div>
-                </div>
-                <div class="project-item-count">0</div>
-              </div>
-              <div class="project-title">Epipremnum</div>
-            </div>
-          </a>
-
-          <a class="project" href="/aurea.html" onclick="window.location.href=this.href; return false;">
-            <div>
-              <div class="project-image">
-                <div class="intrinsic">
-                  <div class="content-fill">
-                    <img data-src="images/rehabhome2.jpg" data-image="images/rehabhome2.jpg" alt="Aurea" data-load="false" src="images/rehabhome2.jpg" />
-                    <noscript><img src="images/rehabhome2.jpg" alt="Aurea"></noscript>
-                  </div>
-                </div>
-                <div class="project-item-count">0</div>
-              </div>
-              <div class="project-title">Pino &amp; Maracuja</div>
-            </div>
-          </a>
-
-          <a class="project" href="/hab22.html" onclick="window.location.href=this.href; return false;">
-            <div>
-              <div class="project-image">
-                <div class="intrinsic">
-                  <div class="content-fill">
-                    <img data-src="images/rehabhome3.jpg" data-image="images/rehabhome3.jpg" alt="HAB22" data-load="false" src="images/rehabhome3.jpg" />
-                    <noscript><img src="images/rehabhome3.jpg" alt="HAB22"></noscript>
-                  </div>
-                </div>
-                <div class="project-item-count">0</div>
-              </div>
-              <div class="project-title">Transitions</div>
-            </div>
-          </a>
-
-          <a class="project" href="/lemaitre-rigoles.html" onclick="window.location.href=this.href; return false;">
-            <div>
-              <div class="project-image">
-                <div class="intrinsic">
-                  <div class="content-fill">
-                    <img data-src="images/rehabhome4.jpg" data-image="images/rehabhome4.jpg" alt="Lemaitre Rigoles" data-load="false" src="images/rehabhome4.jpg" />
-                    <noscript><img src="images/rehabhome4.jpg" alt="Lemaitre Rigoles"></noscript>
-                  </div>
-                </div>
-                <div class="project-item-count">0</div>
-              </div>
-              <div class="project-title">735</div>
-            </div>
-          </a>
-
-          <a class="project" href="/ritma.html" onclick="window.location.href=this.href; return false;">
-            <div>
-              <div class="project-image">
-                <div class="intrinsic">
-                  <div class="content-fill">
-                    <img data-src="images/rehabhome5.jpg" data-image="images/rehabhome5.jpg" alt="Ritma" data-load="false" src="images/rehabhome5.jpg" />
-                    <noscript><img src="images/rehabhome5.jpg" alt="Ritma"></noscript>
-                  </div>
-                </div>
-                <div class="project-item-count">0</div>
-              </div>
-              <div class="project-title">Ritma</div>
-            </div>
-          </a>
-
-          <a class="project" href="/telepherique.html" onclick="window.location.href=this.href; return false;">
-            <div>
-              <div class="project-image">
-                <div class="intrinsic">
-                  <div class="content-fill">
-                    <img data-src="images/rehabhome6.jpg" data-image="images/rehabhome6.jpg" alt="Telepherique" data-load="false" src="images/rehabhome6.jpg" />
-                    <noscript><img src="images/rehabhome6.jpg" alt="Telepherique"></noscript>
-                  </div>
-                </div>
-                <div class="project-item-count">0</div>
-              </div>
-              <div class="project-title">Ceu de Rocinha</div>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
+<header id="header">
+  <div id="logo">
+    <h1 class="logo">
+      <a href="index.html">
+        <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+      </a>
+    </h1>
   </div>
+
+  <div id="topNav">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="interieur.html">Intérieur</a></li>
+        <li><a href="ephemere.html">Éphémère</a></li>
+        <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+        <li><a href="press.html">Presse</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instagram.html">Instagram</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div id="projectThumbs">
+    <div class="wrapper projects-grid">
+
+      <a class="project" href="/anatole.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/home3.jpg" data-image="images/home3.jpg" src="images/home3.jpg" alt="Epipremnum">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Epipremnum</div>
+        </div>
+      </a>
+
+      <a class="project" href="/aurea.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome2.jpg" data-image="images/rehabhome2.jpg" src="images/rehabhome2.jpg" alt="Pino &amp; Maracuja">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Pino &amp; Maracuja</div>
+        </div>
+      </a>
+
+      <a class="project" href="/hab22.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome3.jpg" data-image="images/rehabhome3.jpg" src="images/rehabhome3.jpg" alt="Transitions">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Transitions</div>
+        </div>
+      </a>
+
+      <a class="project" href="/lemaitre-rigoles.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome4.jpg" data-image="images/rehabhome4.jpg" src="images/rehabhome4.jpg" alt="735">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">735</div>
+        </div>
+      </a>
+
+      <a class="project" href="/ritma.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome5.jpg" data-image="images/rehabhome5.jpg" src="images/rehabhome5.jpg" alt="Ritma">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Ritma</div>
+        </div>
+      </a>
+
+      <a class="project" href="/telepherique.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome6.jpg" data-image="images/rehabhome6.jpg" src="images/rehabhome6.jpg" alt="Ceu de Rocinha">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Ceu de Rocinha</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
