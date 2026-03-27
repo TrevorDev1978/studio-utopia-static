@@ -98,6 +98,7 @@
       display: block;
       text-decoration: none;
       color: inherit;
+      position: relative;
     }
 
     .project-image {
@@ -105,6 +106,7 @@
       aspect-ratio: 1 / 1;
       overflow: hidden;
       background: #f1f1ed;
+      position: relative;
     }
 
     .project-image img {
@@ -112,6 +114,40 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.26);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .project-overlay span {
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+      font-weight: 300;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.02);
     }
 
     .project-title {
@@ -181,6 +217,7 @@
     <a class="project-card" href="/anatole.html" onclick="window.location.href=this.href; return false;">
       <div class="project-image">
         <img src="images/home3.jpg" alt="Epipremnum">
+        <div class="project-overlay"><span>Epipremnum</span></div>
       </div>
       <div class="project-title">Epipremnum</div>
     </a>
@@ -188,6 +225,7 @@
     <a class="project-card" href="/aurea.html" onclick="window.location.href=this.href; return false;">
       <div class="project-image">
         <img src="images/rehabhome2.jpg" alt="Pino &amp; Maracuja">
+        <div class="project-overlay"><span>Pino &amp; Maracuja</span></div>
       </div>
       <div class="project-title">Pino &amp; Maracuja</div>
     </a>
@@ -195,6 +233,7 @@
     <a class="project-card" href="/hab22.html" onclick="window.location.href=this.href; return false;">
       <div class="project-image">
         <img src="images/rehabhome3.jpg" alt="Transitions">
+        <div class="project-overlay"><span>Transitions</span></div>
       </div>
       <div class="project-title">Transitions</div>
     </a>
@@ -202,6 +241,7 @@
     <a class="project-card" href="/lemaitre-rigoles.html" onclick="window.location.href=this.href; return false;">
       <div class="project-image">
         <img src="images/rehabhome4.jpg" alt="735">
+        <div class="project-overlay"><span>735</span></div>
       </div>
       <div class="project-title">735</div>
     </a>
@@ -209,6 +249,7 @@
     <a class="project-card" href="/ritma.html" onclick="window.location.href=this.href; return false;">
       <div class="project-image">
         <img src="images/rehabhome5.jpg" alt="Ritma">
+        <div class="project-overlay"><span>Ritma</span></div>
       </div>
       <div class="project-title">Ritma</div>
     </a>
@@ -216,6 +257,7 @@
     <a class="project-card" href="/telepherique.html" onclick="window.location.href=this.href; return false;">
       <div class="project-image">
         <img src="images/rehabhome6.jpg" alt="Ceu de Rocinha">
+        <div class="project-overlay"><span>Ceu de Rocinha</span></div>
       </div>
       <div class="project-title">Ceu de Rocinha</div>
     </a>
