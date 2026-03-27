@@ -13,9 +13,16 @@
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
+      margin: 0 !important;
+      padding: 0 !important;
       background: #FAFAF8;
+    }
+
+    body,
+    #canvas,
+    #page {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     body {
@@ -26,13 +33,13 @@
     #header {
       width: 100% !important;
       text-align: center !important;
-      margin-top: 40px !important;
-      margin-bottom: 0 !important;
+      margin: 40px 0 0 0 !important;
       padding: 0 !important;
-      position: static !important;
-      left: auto !important;
-      top: auto !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
       transform: none !important;
+      clear: both !important;
     }
 
     #logo {
@@ -59,11 +66,11 @@
     #topNav {
       width: 100% !important;
       text-align: center !important;
-      margin-top: 18px !important;
-      margin-bottom: 0 !important;
+      margin: 18px 0 0 0 !important;
       padding: 0 !important;
-      position: static !important;
-      left: auto !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
       transform: none !important;
     }
 
@@ -103,6 +110,17 @@
     #mobileNav,
     #mobileMenuLink {
       display: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      border: 0 !important;
+    }
+
+    .main-nav,
+    .main-nav ul,
+    .main-nav li {
+      position: static !important;
     }
 
     #page {
@@ -118,6 +136,7 @@
       position: static !important;
       left: auto !important;
       right: auto !important;
+      clear: both !important;
     }
 
     #projectThumbs > .wrapper {
@@ -172,6 +191,10 @@
       #projectThumbs a.project:nth-child(2n) {
         margin-right: 0 !important;
       }
+    }
+
+    #canvas > header:first-child {
+      margin-top: 40px !important;
     }
 
     @media (max-width: 640px) {
