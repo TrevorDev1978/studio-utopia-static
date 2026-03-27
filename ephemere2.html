@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Interiors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atelier Utopia interiors and architecture projects.">
+  <link rel="stylesheet" type="text/css" href="../static1.squarespace.com/static/sitecss/578bbbc546c3c4caeeca2291/111/4fd11f32c4aad9b01c9e624c/578d2062f5e2317f09d4183b/1362/site.css">
+
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #FAFAF8;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000;
+    }
+
+    body,
+    #canvas,
+    #page {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .page-divider,
+    .extra-wrapper.page-header,
+    #projectPages,
+    .project-controls,
+    .extra-wrapper.page-footer,
+    #footer,
+    #mobileNav,
+    #mobileMenuLink {
+      display: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      border: 0 !important;
+    }
+
+    #header {
+      width: 100% !important;
+      text-align: center !important;
+      margin: 28px 0 0 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+      clear: both !important;
+    }
+
+    #logo {
+      text-align: center !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #logo h1,
+    #logo .logo {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1em !important;
+    }
+
+    #logo a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    #logo img {
+      display: block !important;
+      margin: 0 auto !important;
+      width: 325px !important;
+      max-width: 325px !important;
+      height: auto !important;
+    }
+
+    #topNav {
+      width: 100% !important;
+      text-align: center !important;
+      margin: 12px 0 0 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+    }
+
+    #topNav ul {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #topNav li {
+      display: inline-block !important;
+      margin: 0 12px !important;
+      position: static !important;
+    }
+
+    #topNav a {
+      color: #575757 !important;
+      text-transform: uppercase !important;
+      font-weight: 300 !important;
+      text-decoration: none !important;
+      letter-spacing: 1px !important;
+      font-size: 13px !important;
+      font-family: futura-pt, Arial, Helvetica, sans-serif !important;
+      line-height: 1.6em !important;
+    }
+
+    #topNav a:hover {
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      padding: 0 30px 80px 30px;
+      box-sizing: border-box;
+    }
+
+    #projectThumbs {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      clear: both !important;
+    }
+
+    #projectThumbs > .wrapper {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 42px 28px;
+      align-items: start;
+    }
+
+    .projects-grid a.project {
+      width: 100%;
+      max-width: none;
+      margin: 0 !important;
+      float: none !important;
+      display: block !important;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .projects-grid .project-image {
+      width: 100%;
+      margin: 0;
+      position: relative;
+    }
+
+    .projects-grid .intrinsic {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      overflow: hidden;
+      background: #f1f1ed;
+    }
+
+    .projects-grid .content-fill {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .projects-grid .content-fill img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      display: block;
+    }
+
+    .projects-grid .project-item-count {
+      display: none !important;
+    }
+
+    .projects-grid .project-title {
+      margin-top: 0;
+    }
+
+    @media (max-width: 980px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      #logo img {
+        width: 260px !important;
+        max-width: 80vw !important;
+      }
+
+      #topNav li {
+        margin: 0 8px !important;
+      }
+
+      .container {
+        margin-top: 40px;
+        padding: 0 18px 60px 18px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-thumb-title-position-overlay index-item-layout-center thumbnail-layout-basic-grid thumbnails-on-open-page-show-all layout-style-center logo-image has-primary-nav">
+
+<header id="header">
+  <div id="logo">
+    <h1 class="logo">
+      <a href="index.html">
+        <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+      </a>
+    </h1>
+  </div>
+
+  <div id="topNav">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="interieur.html">Intérieur</a></li>
+        <li><a href="ephemere.html">Éphémère</a></li>
+        <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+        <li><a href="press.html">Presse</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instagram.html">Instagram</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div id="projectThumbs">
+    <div class="wrapper projects-grid">
+
+      <a class="project" href="/anatole.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/home3.jpg" data-image="images/home3.jpg" src="images/home3.jpg" alt="Epipremnum">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Epipremnum</div>
+        </div>
+      </a>
+
+      <a class="project" href="/aurea.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome2.jpg" data-image="images/rehabhome2.jpg" src="images/rehabhome2.jpg" alt="Pino &amp; Maracuja">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Pino &amp; Maracuja</div>
+        </div>
+      </a>
+
+      <a class="project" href="/hab22.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome3.jpg" data-image="images/rehabhome3.jpg" src="images/rehabhome3.jpg" alt="Transitions">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Transitions</div>
+        </div>
+      </a>
+
+      <a class="project" href="/lemaitre-rigoles.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome4.jpg" data-image="images/rehabhome4.jpg" src="images/rehabhome4.jpg" alt="735">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">735</div>
+        </div>
+      </a>
+
+      <a class="project" href="/ritma.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome5.jpg" data-image="images/rehabhome5.jpg" src="images/rehabhome5.jpg" alt="Ritma">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Ritma</div>
+        </div>
+      </a>
+
+      <a class="project" href="/telepherique.html" onclick="window.location.href=this.href; return false;">
+        <div>
+          <div class="project-image">
+            <div class="intrinsic">
+              <div class="content-fill">
+                <img data-src="images/rehabhome6.jpg" data-image="images/rehabhome6.jpg" src="images/rehabhome6.jpg" alt="Ceu de Rocinha">
+              </div>
+            </div>
+            <div class="project-item-count">0</div>
+          </div>
+          <div class="project-title">Ceu de Rocinha</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
