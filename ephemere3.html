@@ -10,7 +10,7 @@
     html, body {
       margin: 0 !important;
       padding: 0 !important;
-      background-color: #FAFAF8;
+      background-color: #FAFAF8 !important;
     }
   </style>
 
@@ -160,26 +160,49 @@
 
     #projectThumbs {
       width: 100% !important;
-      text-align: center !important;
-      margin: 0 !important;
+      margin: 0 auto !important;
       padding: 0 !important;
+      text-align: center !important;
     }
 
     #projectThumbs > .wrapper {
-      display: inline-block !important;
-      vertical-align: top !important;
-      text-align: left !important;
-      width: 1206px !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      gap: 0 !important;
+      width: 1218px !important;
       max-width: calc(100vw - 60px) !important;
       padding: 0 !important;
       margin: 0 auto !important;
       box-sizing: border-box !important;
+      text-align: left !important;
+    }
+
+    #projectThumbs .project {
+      vertical-align: top !important;
+      margin-top: 0 !important;
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    #projectThumbs .project > div,
+    #projectThumbs .project .project-image,
+    #projectThumbs .project .intrinsic,
+    #projectThumbs .project .content-fill {
+      margin-top: 0 !important;
+      top: 0 !important;
+      vertical-align: top !important;
     }
 
     #projectThumbs .project:first-child,
     #projectThumbs .project:first-child > div,
-    #projectThumbs .project:first-child .project-image {
+    #projectThumbs .project:first-child .project-image,
+    #projectThumbs .project:first-child .intrinsic,
+    #projectThumbs .project:first-child .content-fill {
       margin-top: 0 !important;
+      top: 0 !important;
+      transform: none !important;
     }
 
     @media (max-width: 1280px) {
@@ -308,6 +331,8 @@
         var wrapper = document.querySelector('#projectThumbs > .wrapper');
         var extras = document.querySelectorAll('.extra-wrapper.page-header, .page-divider');
         var pageHeader = document.getElementById('page-header-578d20eaf5e2317f09d41e18');
+        var projects = document.querySelectorAll('#projectThumbs .project');
+        var firstProjectBits = document.querySelectorAll('#projectThumbs .project:first-child, #projectThumbs .project:first-child > div, #projectThumbs .project:first-child .project-image, #projectThumbs .project:first-child .intrinsic, #projectThumbs .project:first-child .content-fill');
 
         if (!header || !topNav || !page) return;
 
@@ -324,6 +349,7 @@
         if (logo) {
           logo.style.setProperty('margin', '0', 'important');
           logo.style.setProperty('padding', '0', 'important');
+          logo.style.setProperty('text-align', 'center', 'important');
         }
 
         if (logoH1) {
@@ -355,14 +381,30 @@
         }
 
         if (projectThumbs) {
-          projectThumbs.style.setProperty('margin', '0', 'important');
+          projectThumbs.style.setProperty('margin', '0 auto', 'important');
           projectThumbs.style.setProperty('padding', '0', 'important');
+          projectThumbs.style.setProperty('text-align', 'center', 'important');
         }
 
         if (wrapper) {
-          wrapper.style.setProperty('margin-top', '0', 'important');
+          wrapper.style.setProperty('margin', '0 auto', 'important');
           wrapper.style.setProperty('padding-top', '0', 'important');
+          wrapper.style.setProperty('margin-top', '0', 'important');
+          wrapper.style.setProperty('justify-content', 'center', 'important');
+          wrapper.style.setProperty('align-items', 'flex-start', 'important');
         }
+
+        projects.forEach(function(el) {
+          el.style.setProperty('margin-top', '0', 'important');
+          el.style.setProperty('top', '0', 'important');
+          el.style.setProperty('vertical-align', 'top', 'important');
+        });
+
+        firstProjectBits.forEach(function(el) {
+          el.style.setProperty('margin-top', '0', 'important');
+          el.style.setProperty('top', '0', 'important');
+          el.style.setProperty('transform', 'none', 'important');
+        });
 
         extras.forEach(function(el) {
           el.style.setProperty('margin', '0', 'important');
