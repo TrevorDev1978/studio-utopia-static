@@ -8,8 +8,8 @@
 
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
+      margin: 0 !important;
+      padding: 0 !important;
       background-color: #FAFAF8;
     }
   </style>
@@ -54,6 +54,17 @@
   <link rel="stylesheet" type="text/css" href="../static1.squarespace.com/static/sitecss/578bbbc546c3c4caeeca2291/111/4fd11f32c4aad9b01c9e624c/578d2062f5e2317f09d4183b/1362/site.css"/>
 
   <style>
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #FAFAF8 !important;
+    }
+
+    #canvas {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
     #header {
       width: 100% !important;
       text-align: center !important;
@@ -80,11 +91,11 @@
     }
 
     #logo img {
-      display: block;
-      margin: 0 auto;
-      width: 325px;
-      max-width: 325px;
-      height: auto;
+      display: block !important;
+      margin: 0 auto !important;
+      width: 325px !important;
+      max-width: 325px !important;
+      height: auto !important;
     }
 
     #topNav {
@@ -100,25 +111,25 @@
     }
 
     #topNav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
     #topNav li {
-      display: inline-block;
-      margin: 0 12px;
+      display: inline-block !important;
+      margin: 0 12px !important;
     }
 
     #topNav a {
-      color: #575757;
-      text-transform: uppercase;
-      font-weight: 300;
-      text-decoration: none;
-      letter-spacing: 1px;
-      font-size: 13px;
+      color: #575757 !important;
+      text-transform: uppercase !important;
+      font-weight: 300 !important;
+      text-decoration: none !important;
+      letter-spacing: 1px !important;
+      font-size: 13px !important;
       font-family: futura-pt, Arial, Helvetica, sans-serif !important;
-      line-height: 1.6em;
+      line-height: 1.6em !important;
     }
 
     .page-divider,
@@ -128,19 +139,30 @@
       padding: 0 !important;
       min-height: 0 !important;
       height: 0 !important;
+      line-height: 0 !important;
       overflow: hidden !important;
       border: 0 !important;
     }
 
     #page {
-      margin-top: 0 !important;
-      padding-top: 28px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      min-height: 0 !important;
+    }
+
+    #projectPages {
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      overflow: hidden !important;
     }
 
     #projectThumbs {
       width: 100% !important;
       text-align: center !important;
-      margin-top: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     #projectThumbs > .wrapper {
@@ -152,6 +174,12 @@
       padding: 0 !important;
       margin: 0 auto !important;
       box-sizing: border-box !important;
+    }
+
+    #projectThumbs .project:first-child,
+    #projectThumbs .project:first-child > div,
+    #projectThumbs .project:first-child .project-image {
+      margin-top: 0 !important;
     }
 
     @media (max-width: 1280px) {
@@ -275,8 +303,10 @@
         var logoH1 = document.querySelector('#logo h1');
         var topNav = document.getElementById('topNav');
         var page = document.getElementById('page');
-        var dividers = document.querySelectorAll('.page-divider');
-        var extra = document.querySelector('.extra-wrapper.page-header');
+        var projectPages = document.getElementById('projectPages');
+        var projectThumbs = document.getElementById('projectThumbs');
+        var wrapper = document.querySelector('#projectThumbs > .wrapper');
+        var extras = document.querySelectorAll('.extra-wrapper.page-header, .page-divider');
         var pageHeader = document.getElementById('page-header-578d20eaf5e2317f09d41e18');
 
         if (!header || !topNav || !page) return;
@@ -294,7 +324,6 @@
         if (logo) {
           logo.style.setProperty('margin', '0', 'important');
           logo.style.setProperty('padding', '0', 'important');
-          logo.style.setProperty('text-align', 'center', 'important');
         }
 
         if (logoH1) {
@@ -313,30 +342,44 @@
         topNav.style.setProperty('left', '0', 'important');
         topNav.style.setProperty('transform', 'none', 'important');
 
-        page.style.setProperty('margin-top', '0', 'important');
-        page.style.setProperty('padding-top', '28px', 'important');
+        page.style.setProperty('margin', '0', 'important');
+        page.style.setProperty('padding', '0', 'important');
+        page.style.setProperty('min-height', '0', 'important');
 
-        dividers.forEach(function(divider) {
-          divider.style.setProperty('margin', '0', 'important');
-          divider.style.setProperty('padding', '0', 'important');
-          divider.style.setProperty('height', '0', 'important');
-          divider.style.setProperty('border', '0', 'important');
-        });
-
-        if (extra) {
-          extra.style.setProperty('margin', '0', 'important');
-          extra.style.setProperty('padding', '0', 'important');
-          extra.style.setProperty('height', '0', 'important');
-          extra.style.setProperty('min-height', '0', 'important');
-          extra.style.setProperty('overflow', 'hidden', 'important');
-          extra.style.setProperty('border', '0', 'important');
+        if (projectPages) {
+          projectPages.style.setProperty('margin', '0', 'important');
+          projectPages.style.setProperty('padding', '0', 'important');
+          projectPages.style.setProperty('height', '0', 'important');
+          projectPages.style.setProperty('min-height', '0', 'important');
+          projectPages.style.setProperty('overflow', 'hidden', 'important');
         }
+
+        if (projectThumbs) {
+          projectThumbs.style.setProperty('margin', '0', 'important');
+          projectThumbs.style.setProperty('padding', '0', 'important');
+        }
+
+        if (wrapper) {
+          wrapper.style.setProperty('margin-top', '0', 'important');
+          wrapper.style.setProperty('padding-top', '0', 'important');
+        }
+
+        extras.forEach(function(el) {
+          el.style.setProperty('margin', '0', 'important');
+          el.style.setProperty('padding', '0', 'important');
+          el.style.setProperty('height', '0', 'important');
+          el.style.setProperty('min-height', '0', 'important');
+          el.style.setProperty('line-height', '0', 'important');
+          el.style.setProperty('overflow', 'hidden', 'important');
+          el.style.setProperty('border', '0', 'important');
+        });
 
         if (pageHeader) {
           pageHeader.style.setProperty('margin', '0', 'important');
           pageHeader.style.setProperty('padding', '0', 'important');
           pageHeader.style.setProperty('height', '0', 'important');
           pageHeader.style.setProperty('min-height', '0', 'important');
+          pageHeader.style.setProperty('line-height', '0', 'important');
           pageHeader.style.setProperty('overflow', 'hidden', 'important');
           pageHeader.style.setProperty('border', '0', 'important');
         }
@@ -347,6 +390,7 @@
       setTimeout(pinHeaderLikeStudio, 50);
       setTimeout(pinHeaderLikeStudio, 250);
       setTimeout(pinHeaderLikeStudio, 800);
+      setTimeout(pinHeaderLikeStudio, 1500);
     })();
   </script>
 </body>
