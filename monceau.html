@@ -123,11 +123,9 @@
 
     /* ===== JUXTAPOSE ===== */
     .juxtapose-wrapper {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-top: 48px;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 48px;
     }
 
     .juxtapose-wrapper iframe {
@@ -229,14 +227,14 @@
       </div>
     </div>
 
-  </div>
-</div>
+    <!-- ===== JUXTAPOSE : aligné sur la grille du container ===== -->
+    <div class="juxtapose-wrapper">
+      <iframe frameborder="0" class="juxtapose" width="100%" height="672"
+        src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c7c4a4f5-2b8e-11f1-ba1b-0e6f42328d7d">
+      </iframe>
+    </div>
 
-<!-- ===== JUXTAPOSE : pleine largeur, hors du container ===== -->
-<div class="juxtapose-wrapper">
-  <iframe frameborder="0" class="juxtapose" width="100%" height="672"
-    src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c7c4a4f5-2b8e-11f1-ba1b-0e6f42328d7d">
-  </iframe>
+  </div>
 </div>
 
 </body>
