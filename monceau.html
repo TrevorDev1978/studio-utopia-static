@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bleu de Hongrie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER / LOGO / NAV ===== */
+    #header {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    #logo img {
+      display: block;
+      margin: 0 auto;
+      width: 325px;
+      max-width: 325px;
+      height: auto;
+    }
+
+    #topNav {
+      margin-top: 18px;
+    }
+
+    #topNav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #topNav li {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    #topNav a {
+      color: #575757;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+    }
+
+    #topNav a:hover {
+      opacity: 0.7;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      margin-top: 60px;
+    }
+
+    .gallery .full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 64px;
+    }
+
+    .gallery .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+      align-items: end;
+    }
+
+    .img-box {
+      height: 720px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+
+    .monceau5 img {
+      transform: scaleX(1.04) scale(1.06);
+      transform-origin: bottom center;
+    }
+
+    .project-title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .project-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #000;
+    }
+
+    .project-text strong {
+      font-weight: 600;
+    }
+
+    /* ===== JUXTAPOSE ===== */
+    .juxtapose-wrapper {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 48px;
+    }
+
+    .juxtapose-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 672px;
+      border: none;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .gallery .two-col {
+        grid-template-columns: 1fr;
+      }
+      .img-box {
+        height: auto;
+      }
+      .img-box img {
+        width: 100%;
+        height: auto;
+        object-fit: initial;
+        object-position: initial;
+        transform: none;
+      }
+      .juxtapose-wrapper iframe {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="header">
+  <div id="logo">
+    <a href="index.html">
+      <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+    </a>
+  </div>
+
+  <div id="topNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interieur.html">Intérieur</a></li>
+      <li><a href="ephemere.html">Éphémère</a></li>
+      <li><a href="rehabilitation.html">Réhabilitation</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="instagram.html">Instagram</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="container">
+  <div class="gallery">
+
+    <!-- orizzontale -->
+    <div class="full">
+      <img src="images/Monceau/monceau.png" alt="">
+    </div>
+
+    <div style="display:flex; align-items:baseline; margin-bottom:16px;">
+      <div class="project-title">Bleu de Hongrie – Paris XVIIIème</div>
+    </div>
+
+    <div class="project-text">
+      <div>
+        <strong>Maître d'ouvrage :</strong> client particulier<br>
+        <strong>Programme :</strong> Réhabilitation d'un appartement Haussmannien<br>
+        <strong>Missions :</strong> ESQ à OPR<br>
+        <strong>Surface totale construite :</strong> 100 m²<br>
+        <strong>Budget :</strong> entre 55 et 100k<br>
+        <strong>Livraison :</strong> 2025<br>
+        <strong>Photos :</strong> ©Utopia
+      </div>
+      <div style="text-align: justify;">
+        L'appartement avait subi de nombreuses transformations de type « bricolage » au cours des décennies. De la cuisine accessible par un escalier dérobé qui était devenue une chambre au remplacement d'une magnifique fenêtre à fermeture mouton et gueule de loup par une minuscule fenêtre oscillo-battante après l'ajout d'une salle-de-bain étonnamment placée… Les pathologies associées à certains de ces travaux, notamment l'humidité et l'absence de lumière naturelle dans les salles de bain posaient des problèmes à mettre en ordre sans révolutionner l'appartement par ailleurs très bien distribué en étoile. Avec ce projet d'acupuncture, le bel appartement a retrouvé son harmonie, le soin apporté à ses matériaux, sa ventilation et une belle distribution de lumière avec une percée de la salle à manger vers le salon.
+      </div>
+    </div>
+
+    <!-- riga 1 -->
+    <div class="two-col">
+      <div class="img-box">
+        <img src="images/Monceau/monceau2.png" alt="">
+      </div>
+      <div class="img-box">
+        <img src="images/Monceau/monceau3.png" alt="">
+      </div>
+    </div>
+
+    <!-- riga 2 -->
+    <div class="two-col">
+      <div class="img-box">
+        <img src="images/Monceau/monceau4.png" alt="">
+      </div>
+      <div class="img-box monceau5">
+        <img src="images/Monceau/monceau5.png" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== JUXTAPOSE : pleine largeur, hors du container ===== -->
+<div class="juxtapose-wrapper">
+  <iframe frameborder="0" class="juxtapose" width="100%" height="672"
+    src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c7c4a4f5-2b8e-11f1-ba1b-0e6f42328d7d">
+  </iframe>
+</div>
+
+</body>
+</html>
