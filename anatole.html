@@ -4,26 +4,22 @@
   <meta charset="utf-8">
   <title>Anatole</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #fff;
     }
-
     .container {
       max-width: 1200px;
       margin: 80px auto;
       padding: 0 20px;
     }
-
     #header {
       width: 100%;
       text-align: center;
       margin-top: 40px;
     }
-
     #logo img {
       display: block;
       margin: 0 auto;
@@ -31,23 +27,19 @@
       max-width: 325px;
       height: auto;
     }
-
     #topNav {
       margin-top: 18px;
       text-align: center;
     }
-
     #topNav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
     #topNav li {
       display: inline-block;
       margin: 0 12px;
     }
-
     #topNav a {
       color: #575757;
       text-transform: uppercase;
@@ -58,9 +50,7 @@
       font-family: futura-pt, Arial, Helvetica, sans-serif;
       line-height: 1.6em;
     }
-
     .gallery { margin-top: 32px; }
-
     .full img {
       width: 100%;
       height: auto;
@@ -108,18 +98,26 @@
       font-weight: 600;
     }
 
+    /* ===== JUXTAPOSE IFRAME ===== */
+    .juxtapose-wrapper {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+    .juxtapose-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 1841px;
+      border: none;
+    }
   </style>
 </head>
-
 <body>
-
 <header id="header">
   <div id="logo">
     <a href="index.html">
       <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="">
     </a>
   </div>
-
   <div id="topNav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -133,20 +131,16 @@
     </ul>
   </div>
 </header>
-
 <div class="container">
   <div class="gallery">
-
     
     <div class="full"><img src="images/anatole/anatole.jpg"></div>
-
     <div style="display:flex; align-items:baseline; margin-bottom:16px;">
       <div class="project-title">Anatole S&N - Ile de France, Puteaux</div>
     </div>
-
     <div class="project-text">
       <div>
-        <strong>Maître d’ouvrage :</strong> client particulier<br>
+        <strong>Maître d'ouvrage :</strong> client particulier<br>
         <strong>Programme :</strong> Surélévation d'un étage d'un immeuble 1930<br>
         <strong>Missions :</strong> ESQ à APR<br>
         <strong>Surface totale construite :</strong> 52 m²<br>
@@ -157,24 +151,22 @@
         La structure bois et les combles mansardé ont permis une surélévation au poids acceptable pour cet immeuble qui totalise à présent cinq étages. Traversant, il est baigné de lumière. Avec sa belle hauteur sous plafond, on peut exploiter une partie du volume pour y installer les couchages dont les fermes sont la structure et ainsi libérer de la surface utile au sol. Les matériaux naturels sont valorisés. La présence du végétal apporte de l'apaisement. C'est un cocon qui surplombe la place de la mairie tout juste rénovée, au coeur de la ville. On s'y endort en regardant les étoiles par le velux.
       </div>
     </div>
-
-
     <div class="two-col-23">
       <img src="images/anatole/anatole2.jpg">
       <img src="images/anatole/anatole3.jpg">
     </div>
-
     <div class="full"><img src="images/anatole/anatole4.jpg"></div>
-
     <div class="two-col-56">
       <img src="images/anatole/anatole5.jpg">
       <img src="images/anatole/anatole6.jpg">
     </div>
-
     <div class="full"><img src="images/anatole/anatole7.jpg"></div>
+
+    <div class="juxtapose-wrapper">
+      <iframe frameborder="0" class="juxtapose" width="100%" height="1841" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c951187c-2c59-11f1-ba1b-0e6f42328d7d"></iframe>
+    </div>
 
   </div>
 </div>
-
 </body>
 </html>
