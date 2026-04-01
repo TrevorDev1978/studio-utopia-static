@@ -30,6 +30,7 @@
       margin: 0 auto;
       width: 325px;
       max-width: 325px;
+      height: auto;
     }
 
     #topNav {
@@ -68,6 +69,7 @@
 
     .gallery .full img {
       width: 100%;
+      height: auto;
       display: block;
       margin-bottom: 64px;
     }
@@ -77,33 +79,64 @@
       grid-template-columns: 1fr 1fr;
       gap: 48px;
       margin-bottom: 48px;
+      align-items: end;
     }
 
     .img-box {
       height: 720px;
+      width: 100%;
       overflow: hidden;
     }
 
     .img-box img {
       width: 100%;
       height: 100%;
+      display: block;
       object-fit: contain;
       object-position: bottom center;
     }
 
-    /* ===== SLIDER IDENTIQUE BEAUGRENELLE ===== */
+    .monceau5 img {
+      transform: scaleX(1.04) scale(1.06);
+      transform-origin: bottom center;
+    }
+
+    .project-title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .project-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #000;
+    }
+
+    .project-text strong {
+      font-weight: 600;
+    }
+
+    /* ===== BEFORE/AFTER (IDENTIQUE BEAUGRENELLE) ===== */
     .ba-wrapper {
       position: relative;
       width: 100%;
+      margin-top: 0;
       margin-bottom: 48px;
       overflow: hidden;
       cursor: ew-resize;
       user-select: none;
+      -webkit-user-select: none;
     }
 
-    .ba-after {
+    .ba-wrapper img.ba-after {
       display: block;
       width: 100%;
+      height: auto;
     }
 
     .ba-before {
@@ -111,17 +144,17 @@
       top: 0;
       left: 0;
       height: 100%;
-      width: 50%;
       overflow: hidden;
+      width: 50%;
     }
 
     .ba-before img {
-      height: 100%;
+      display: block;
       width: auto;
+      height: 100%;
       max-width: none;
     }
 
-    /* LIGNE */
     .ba-handle {
       position: absolute;
       top: 0;
@@ -130,25 +163,29 @@
       width: 2px;
       height: 100%;
       background: #fff;
-      z-index: 10;
       cursor: ew-resize;
+      z-index: 10;
     }
 
-    /* DISQUE CENTRAL (IMPORTANT) */
-    .ba-handle::before {
+    /* 👉 EXACTEMENT comme Beaugrenelle */
+    .ba-handle::before,
+    .ba-handle::after {
       content: '';
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 42px;
-      height: 42px;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
       background: #fff;
       border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      top: 50%;
+      margin-top: -20px;
     }
 
-    /* FLÈCHES */
+    .ba-handle::after {
+      display: none;
+    }
+
     .ba-arrows {
       position: absolute;
       top: 50%;
@@ -158,11 +195,14 @@
       height: 40px;
       z-index: 11;
       pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .ba-arrows svg {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       fill: #555;
     }
 
@@ -175,7 +215,11 @@
         height: auto;
       }
       .img-box img {
+        width: 100%;
         height: auto;
+        object-fit: initial;
+        object-position: initial;
+        transform: none;
       }
     }
   </style>
@@ -186,7 +230,7 @@
 <header id="header">
   <div id="logo">
     <a href="index.html">
-      <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w">
+      <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="">
     </a>
   </div>
 
@@ -208,16 +252,52 @@
   <div class="gallery">
 
     <div class="full">
-      <img src="images/Monceau/monceau.png">
+      <img src="images/Monceau/monceau.png" alt="">
     </div>
 
-    <!-- SLIDER -->
-    <div class="ba-wrapper" id="ba1">
-      <img class="ba-after" src="images/Monceau/apres1.jpg">
-      <div class="ba-before" id="ba1-before">
-        <img src="images/Monceau/avant1.jpg">
-      </div>
+    <div style="display:flex; align-items:baseline; margin-bottom:16px;">
+      <div class="project-title">Bleu de Hongrie – Paris XVIIIème</div>
+    </div>
 
+    <div class="project-text">
+      <div>
+        <strong>Maître d'ouvrage :</strong> client particulier<br>
+        <strong>Programme :</strong> Réhabilitation d'un appartement Haussmannien<br>
+        <strong>Missions :</strong> ESQ à OPR<br>
+        <strong>Surface totale construite :</strong> 100 m²<br>
+        <strong>Budget :</strong> entre 55 et 100k<br>
+        <strong>Livraison :</strong> 2025<br>
+        <strong>Photos :</strong> ©Utopia
+      </div>
+      <div style="text-align: justify;">
+        L'appartement avait subi de nombreuses transformations de type « bricolage »...
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="img-box">
+        <img src="images/Monceau/monceau2.png" alt="">
+      </div>
+      <div class="img-box">
+        <img src="images/Monceau/monceau3.png" alt="">
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="img-box">
+        <img src="images/Monceau/monceau4.png" alt="">
+      </div>
+      <div class="img-box monceau5">
+        <img src="images/Monceau/monceau5.png" alt="">
+      </div>
+    </div>
+
+    <!-- NOUVELLE ANIMATION -->
+    <div class="ba-wrapper" id="ba1">
+      <img class="ba-after" src="images/Monceau/apres1.jpg" alt="Après">
+      <div class="ba-before" id="ba1-before">
+        <img src="images/Monceau/avant1.jpg" alt="Avant">
+      </div>
       <div class="ba-handle" id="ba1-handle">
         <div class="ba-arrows">
           <svg viewBox="0 0 24 24">
@@ -246,13 +326,13 @@ function initSlider(wrapperId, beforeId, handleId) {
     handle.style.left  = pctStr;
   }
 
-  handle.addEventListener('mousedown', () => active = true);
-  window.addEventListener('mouseup', () => active = false);
-  window.addEventListener('mousemove', e => { if (active) setPosition(e.clientX); });
+  handle.addEventListener('mousedown',  () => active = true);
+  window.addEventListener('mouseup',    () => active = false);
+  window.addEventListener('mousemove',  e => { if (active) setPosition(e.clientX); });
 
   handle.addEventListener('touchstart', e => { active = true; e.preventDefault(); }, { passive: false });
-  window.addEventListener('touchend', () => active = false);
-  window.addEventListener('touchmove', e => { if (active) setPosition(e.touches[0].clientX); });
+  window.addEventListener('touchend',   () => active = false);
+  window.addEventListener('touchmove',  e => { if (active) setPosition(e.touches[0].clientX); }, { passive: true });
 
   wrapper.addEventListener('click', e => setPosition(e.clientX));
 }
