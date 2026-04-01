@@ -18,7 +18,7 @@
       padding: 0 20px;
     }
 
-    /* ===== HEADER / LOGO / NAV ===== */
+    /* HEADER */
     #header {
       width: 100%;
       text-align: center;
@@ -62,7 +62,7 @@
       opacity: 0.7;
     }
 
-    /* ===== GALLERY ===== */
+    /* GALLERY */
     .gallery {
       margin-top: 60px;
     }
@@ -117,25 +117,71 @@
       color: #000;
     }
 
-    .project-text strong {
-      font-weight: 600;
-    }
-
-    /* ===== JUXTAPOSE ===== */
-    .juxtapose-wrapper {
+    /* ===== BEFORE / AFTER SLIDER ===== */
+    .ba-wrapper {
+      position: relative;
       width: 100%;
-      margin-top: 0;
       margin-bottom: 48px;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
     }
 
-    .juxtapose-wrapper iframe {
+    .ba-wrapper img.ba-after {
       display: block;
       width: 100%;
-      height: 672px;
-      border: none;
+      height: auto;
     }
 
-    /* Mobile */
+    .ba-before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      width: 50%;
+    }
+
+    .ba-before img {
+      display: block;
+      width: auto;
+      height: 100%;
+      max-width: none;
+    }
+
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: #fff;
+      cursor: ew-resize;
+      z-index: 10;
+    }
+
+    .ba-arrows {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      z-index: 11;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ba-arrows svg {
+      width: 30px;
+      height: 30px;
+      fill: #555;
+    }
+
+    /* MOBILE */
     @media (max-width: 768px) {
       .gallery .two-col {
         grid-template-columns: 1fr;
@@ -147,11 +193,7 @@
         width: 100%;
         height: auto;
         object-fit: initial;
-        object-position: initial;
         transform: none;
-      }
-      .juxtapose-wrapper iframe {
-        height: 360px;
       }
     }
   </style>
@@ -162,7 +204,7 @@
 <header id="header">
   <div id="logo">
     <a href="index.html">
-      <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+      <img src="images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w">
     </a>
   </div>
 
@@ -183,7 +225,6 @@
 <div class="container">
   <div class="gallery">
 
-    <!-- orizzontale -->
     <div class="full">
       <img src="images/Monceau/monceau.png" alt="">
     </div>
@@ -197,45 +238,81 @@
         <strong>Maître d'ouvrage :</strong> client particulier<br>
         <strong>Programme :</strong> Réhabilitation d'un appartement Haussmannien<br>
         <strong>Missions :</strong> ESQ à OPR<br>
-        <strong>Surface totale construite :</strong> 100 m²<br>
-        <strong>Budget :</strong> entre 55 et 100k<br>
+        <strong>Surface :</strong> 100 m²<br>
+        <strong>Budget :</strong> 55k – 100k<br>
         <strong>Livraison :</strong> 2025<br>
-        <strong>Photos :</strong> ©Utopia
       </div>
       <div style="text-align: justify;">
-        L'appartement avait subi de nombreuses transformations de type « bricolage » au cours des décennies. De la cuisine accessible par un escalier dérobé qui était devenue une chambre au remplacement d'une magnifique fenêtre à fermeture mouton et gueule de loup par une minuscule fenêtre oscillo-battante après l'ajout d'une salle-de-bain étonnamment placée… Les pathologies associées à certains de ces travaux, notamment l'humidité et l'absence de lumière naturelle dans les salles de bain posaient des problèmes à mettre en ordre sans révolutionner l'appartement par ailleurs très bien distribué en étoile. Avec ce projet d'acupuncture, le bel appartement a retrouvé son harmonie, le soin apporté à ses matériaux, sa ventilation et une belle distribution de lumière avec une percée de la salle à manger vers le salon.
+        L'appartement avait subi de nombreuses transformations...
       </div>
     </div>
 
-    <!-- riga 1 -->
+    <!-- GRID -->
     <div class="two-col">
       <div class="img-box">
-        <img src="images/Monceau/monceau2.png" alt="">
+        <img src="images/Monceau/monceau2.png">
       </div>
       <div class="img-box">
-        <img src="images/Monceau/monceau3.png" alt="">
+        <img src="images/Monceau/monceau3.png">
       </div>
     </div>
 
-    <!-- riga 2 -->
     <div class="two-col">
       <div class="img-box">
-        <img src="images/Monceau/monceau4.png" alt="">
+        <img src="images/Monceau/monceau4.png">
       </div>
       <div class="img-box monceau5">
-        <img src="images/Monceau/monceau5.png" alt="">
+        <img src="images/Monceau/monceau5.png">
       </div>
     </div>
 
-    <!-- ===== JUXTAPOSE : aligné sur la grille du container ===== -->
-    <div class="juxtapose-wrapper">
-      <iframe frameborder="0" class="juxtapose" width="100%" height="672"
-        src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c7c4a4f5-2b8e-11f1-ba1b-0e6f42328d7d">
-      </iframe>
+    <!-- ===== NOUVELLE ANIMATION ===== -->
+    <div class="ba-wrapper" id="ba1">
+      <img class="ba-after" src="images/Monceau/apres1.jpg" alt="Après">
+      <div class="ba-before" id="ba1-before">
+        <img src="images/Monceau/avant1.jpg" alt="Avant">
+      </div>
+      <div class="ba-handle" id="ba1-handle">
+        <div class="ba-arrows">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 5l-7 7 7 7V5zm8 0v14l7-7-7-7z"/>
+          </svg>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
+
+<script>
+function initSlider(wrapperId, beforeId, handleId) {
+  const wrapper = document.getElementById(wrapperId);
+  const before  = document.getElementById(beforeId);
+  const handle  = document.getElementById(handleId);
+  let active = false;
+
+  function setPosition(x) {
+    const rect = wrapper.getBoundingClientRect();
+    let pct = (x - rect.left) / rect.width;
+    pct = Math.min(Math.max(pct, 0), 1);
+    const pctStr = (pct * 100) + '%';
+    before.style.width = pctStr;
+    handle.style.left  = pctStr;
+  }
+
+  handle.addEventListener('mousedown', () => active = true);
+  window.addEventListener('mouseup', () => active = false);
+  window.addEventListener('mousemove', e => { if (active) setPosition(e.clientX); });
+
+  handle.addEventListener('touchstart', e => { active = true; e.preventDefault(); }, { passive: false });
+  window.addEventListener('touchend', () => active = false);
+  window.addEventListener('touchmove', e => { if (active) setPosition(e.touches[0].clientX); });
+
+  wrapper.addEventListener('click', e => setPosition(e.clientX));
+}
+
+initSlider('ba1', 'ba1-before', 'ba1-handle');
+</script>
 
 </body>
 </html>
