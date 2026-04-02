@@ -98,16 +98,75 @@
       font-weight: 600;
     }
 
-    /* ===== JUXTAPOSE IFRAME ===== */
-    .juxtapose-wrapper {
+    /* ===== BEFORE/AFTER SLIDER ===== */
+    .ba-wrapper {
+      position: relative;
       width: 100%;
       margin-bottom: 32px;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+      -webkit-user-select: none;
     }
-    .juxtapose-wrapper iframe {
+    .ba-wrapper img.ba-after {
       display: block;
       width: 100%;
-      height: 1841px;
-      border: none;
+      height: auto;
+    }
+    .ba-before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      width: 50%;
+    }
+    .ba-before img {
+      display: block;
+      width: auto;
+      height: 100%;
+      max-width: none;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: #fff;
+      cursor: ew-resize;
+      z-index: 10;
+    }
+    .ba-arrows {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      z-index: 11;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ba-arrows svg {
+      width: 30px;
+      height: 30px;
+      fill: #555;
+    }
+    .ba-handle::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      top: 50%;
+      margin-top: -20px;
     }
   </style>
 </head>
@@ -133,7 +192,7 @@
 </header>
 <div class="container">
   <div class="gallery">
-    
+
     <div class="full"><img src="images/anatole/anatole.jpg"></div>
     <div style="display:flex; align-items:baseline; margin-bottom:16px;">
       <div class="project-title">Epipremnum - Ile de France, Puteaux</div>
@@ -162,11 +221,53 @@
     </div>
     <div class="full"><img src="images/anatole/anatole7.jpg"></div>
 
-    <div class="juxtapose-wrapper">
-      <iframe frameborder="0" class="juxtapose" width="100%" height="1841" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c951187c-2c59-11f1-ba1b-0e6f42328d7d"></iframe>
+    <!-- Animation avant/après -->
+    <div class="ba-wrapper" id="ba1">
+      <img class="ba-after" src="images/anatole/apres1.jpg" alt="Après">
+      <div class="ba-before" id="ba1-before">
+        <img src="images/anatole/avant1.jpg" alt="Avant">
+      </div>
+      <div class="ba-handle" id="ba1-handle">
+        <div class="ba-arrows">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5l-7 7 7 7V5zm8 0v14l7-7-7-7z"/>
+          </svg>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
+
+<script>
+  function initSlider(wrapperId, beforeId, handleId) {
+    const wrapper = document.getElementById(wrapperId);
+    const before  = document.getElementById(beforeId);
+    const handle  = document.getElementById(handleId);
+    let active = false;
+
+    function setPosition(x) {
+      const rect = wrapper.getBoundingClientRect();
+      let pct = (x - rect.left) / rect.width;
+      pct = Math.min(Math.max(pct, 0), 1);
+      const pctStr = (pct * 100) + '%';
+      before.style.width = pctStr;
+      handle.style.left  = pctStr;
+    }
+
+    handle.addEventListener('mousedown',  () => active = true);
+    window.addEventListener('mouseup',    () => active = false);
+    window.addEventListener('mousemove',  e => { if (active) setPosition(e.clientX); });
+
+    handle.addEventListener('touchstart', e => { active = true; e.preventDefault(); }, { passive: false });
+    window.addEventListener('touchend',   () => active = false);
+    window.addEventListener('touchmove',  e => { if (active) setPosition(e.touches[0].clientX); }, { passive: true });
+
+    wrapper.addEventListener('click', e => setPosition(e.clientX));
+  }
+
+  initSlider('ba1', 'ba1-before', 'ba1-handle');
+</script>
+
 </body>
 </html>
