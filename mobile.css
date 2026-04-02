@@ -68,6 +68,23 @@
     margin-bottom: 20px !important;
   }
 
+  /* IMMAGINI E WRAPPER SHRINK -> FULL WIDTH SOLO SU MOBILE */
+  .gallery > img.shrink-60,
+  .gallery > img.shrink-65,
+  .gallery > img.shrink-70,
+  .gallery > img.shrink-75,
+  .gallery > img.shrink-80,
+  .gallery > div.shrink-60,
+  .gallery > div.shrink-65,
+  .gallery > div.shrink-70,
+  .gallery > div.shrink-75,
+  .gallery > div.shrink-80 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   /* TUTTE LE GRIGLIE A 2 COLONNE -> 1 COLONNA */
   .two-col,
   .two-col-23,
