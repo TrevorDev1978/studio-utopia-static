@@ -4,13 +4,21 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Interiors — kellybehun | STUDIO</title>
+  <title>Éphémère</title>
 
   <style>
-    html, body { background-color: #FAFAF8; }
+    html {
+      overflow-y: scroll;
+    }
+
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #FAFAF8 !important;
+    }
   </style>
 
-  <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/b335e30c-fe33-4161-ae02-d68bdc5839c6/favicon.ico?format=100w"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="preconnect" href="https://images.squarespace-cdn.com/">
   <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
   <link rel="preconnect" href="https://p.typekit.net/" crossorigin>
@@ -50,50 +58,118 @@
   <link rel="stylesheet" type="text/css" href="../static1.squarespace.com/static/sitecss/578bbbc546c3c4caeeca2291/111/4fd11f32c4aad9b01c9e624c/578d2062f5e2317f09d4183b/1362/site.css"/>
 
   <style>
-    #topNav a {
-      color: #575757;
-      text-transform: uppercase;
-      font-weight: 300;
-      text-decoration: none;
-      letter-spacing: 1px;
-      font-size: 13px;
-      font-family: futura-pt, Arial, Helvetica, sans-serif !important;
-      line-height: 1.6em;
-    }
-    #logo img {
-      display: block;
-      margin: 0 auto;
-      width: 325px;
-      max-width: 325px;
-      height: auto;
-    }
-    #topNav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #topNav li {
-      display: inline-block;
-      margin: 0 12px;
-    }
-
-    /* solo normalizzazione minima, niente hack sulle immagini */
-    .page-divider,
-    .extra-wrapper.page-header,
-    #page-header-578d20eaf5e2317f09d41e18 {
+    html, body {
       margin: 0 !important;
       padding: 0 !important;
-      min-height: 0 !important;
+      background: #FAFAF8 !important;
+    }
+
+    body,
+    #canvas,
+    #page {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    #header {
+      width: 100% !important;
+      text-align: center !important;
+      margin: 40px 0 0 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+      clear: both !important;
+    }
+
+    #logo {
+      text-align: center !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #logo h1,
+    #logo .logo {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1em !important;
+    }
+
+    #logo a {
+      display: inline-block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #logo img {
+      display: block !important;
+      margin: 0 auto !important;
+      width: 325px !important;
+      max-width: 325px !important;
+      height: auto !important;
+    }
+
+    #topNav {
+      width: 100% !important;
+      text-align: center !important;
+      margin: 12px 0 0 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+    }
+
+    #topNav ul {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #topNav li {
+      display: inline-block !important;
+      margin: 0 12px !important;
+      position: static !important;
+    }
+
+    #topNav a {
+      color: #575757 !important;
+      text-transform: uppercase !important;
+      font-weight: 300 !important;
+      text-decoration: none !important;
+      letter-spacing: 1px !important;
+      font-size: 13px !important;
+      font-family: futura-pt, Arial, Helvetica, sans-serif !important;
+      line-height: 1.6em !important;
+    }
+
+    #topNav a:hover {
+      opacity: 0.7;
+    }
+
+    .page-divider,
+    .extra-wrapper.page-header,
+    #page-header-578d20eaf5e2317f09d41e18,
+    #projectPages {
+      margin: 0 !important;
+      padding: 0 !important;
       height: 0 !important;
+      min-height: 0 !important;
+      line-height: 0 !important;
       overflow: hidden !important;
       border: 0 !important;
     }
 
-    /* centratura reale del blocco thumbs senza toccare overlay/crop */
     #projectThumbs {
       width: 100% !important;
       text-align: center !important;
-      margin-top: 0 !important;
+      margin: 34px 0 0 0 !important;
+      padding: 0 !important;
+      clear: both !important;
+    }
+    #projectThumbs .project {
+      margin-bottom: 34px !important;
     }
 
     #projectThumbs > .wrapper {
@@ -102,22 +178,58 @@
       text-align: left !important;
       width: 1206px !important;
       max-width: calc(100vw - 60px) !important;
-      padding: 0 !important;
       margin: 0 auto !important;
+      padding: 0 !important;
       box-sizing: border-box !important;
     }
 
-    @media (max-width: 1280px) {
-      #projectThumbs > .wrapper {
-        width: calc(100vw - 60px) !important;
-        max-width: calc(100vw - 60px) !important;
-      }
+    #projectThumbs .project,
+    #projectThumbs .project > div,
+    #projectThumbs .project .project-image,
+    #projectThumbs .project .intrinsic,
+    #projectThumbs .project .content-fill {
+      margin-top: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+      vertical-align: top !important;
+    }
+
+    /* TEXTE ÉPHÉMÈRE — masqué sur desktop */
+    #mobile-page-title {
+      display: none;
     }
 
     @media (max-width: 640px) {
+      #logo img {
+        width: 260px !important;
+        max-width: 80vw !important;
+      }
+
+      #topNav li {
+        margin: 0 8px !important;
+      }
+
       #projectThumbs > .wrapper {
         width: calc(100vw - 36px) !important;
         max-width: calc(100vw - 36px) !important;
+      }
+
+      /* TEXTE ÉPHÉMÈRE — visible sur mobile uniquement */
+      #mobile-page-title {
+        display: block !important;
+        text-align: center !important;
+        margin: 8px 0 0 0 !important;
+        padding: 0 !important;
+        color: #575757 !important;
+        text-transform: uppercase !important;
+        font-weight: 300 !important;
+        letter-spacing: 1px !important;
+        font-size: 13px !important;
+        font-family: futura-pt, Arial, Helvetica, sans-serif !important;
+        line-height: 1.6em !important;
+        pointer-events: none !important;
+        user-select: none !important;
+        cursor: default !important;
       }
     }
   </style>
@@ -133,8 +245,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="interieur.html">Intérieur</a></li>
             <li><a href="ephemere.html">Éphémère</a></li>
-            <li><a href="rehabilitation.html">Réhabilitation</a></li>
-            <li><a href="press.html">Press</a></li>
+            <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+            <li><a href="press.html">Presse</a></li>
             <li><a href="studio.html">Studio</a></li>
             <li><a href="instagram.html">Instagram</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -142,12 +254,21 @@
         </nav>
       </div>
     </div>
+
     <div id="mobileMenuLink"><a>Menu</a></div>
 
     <header id="header">
       <div id="logo" data-content-field="site-title">
-        <h1 class="logo"><a href="index.html"><img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO" /></a></h1>
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO" />
+          </a>
+        </h1>
       </div>
+
+      <!-- Texte ÉPHÉMÈRE visible uniquement sur mobile, non cliquable -->
+      <div id="mobile-page-title">Éphémère</div>
+
       <div id="topNav" data-content-field="navigation">
         <nav class="main-nav">
           <ul>
@@ -165,8 +286,13 @@
     </header>
 
     <div class="page-divider"></div>
+
     <div class="extra-wrapper page-header">
-      <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Header Content: Interiors" data-type="block-field" data-updated-on="1618940919826" id="page-header-578d20eaf5e2317f09d41e18"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+      <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Header Content: Interiors" data-type="block-field" data-updated-on="1618940919826" id="page-header-578d20eaf5e2317f09d41e18">
+        <div class="row sqs-row">
+          <div class="col sqs-col-12 span-12"></div>
+        </div>
+      </div>
     </div>
 
     <section id="page" role="main" data-content-field="main-content">
@@ -185,11 +311,21 @@
     </section>
 
     <div class="extra-wrapper page-footer">
-      <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Footer Content: Interiors" data-type="block-field" id="page-footer-578d20eaf5e2317f09d41e18"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+      <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Footer Content: Interiors" data-type="block-field" id="page-footer-578d20eaf5e2317f09d41e18">
+        <div class="row sqs-row">
+          <div class="col sqs-col-12 span-12"></div>
+        </div>
+      </div>
     </div>
+
     <div class="page-divider"></div>
+
     <footer id="footer">
-      <div class="sqs-layout sqs-grid-1 columns-1 empty" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1693495117457" id="footerBlock"><div class="row sqs-row"><div class="col sqs-col-1 span-1"></div></div></div>
+      <div class="sqs-layout sqs-grid-1 columns-1 empty" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1693495117457" id="footerBlock">
+        <div class="row sqs-row">
+          <div class="col sqs-col-1 span-1"></div>
+        </div>
+      </div>
     </footer>
   </div>
 
@@ -201,67 +337,52 @@
 
   <script>
     (function () {
-      function pinHeaderLikeStudio() {
-        var header = document.getElementById('header');
-        var topNav = document.getElementById('topNav');
+      function stabilizeEphemere() {
         var page = document.getElementById('page');
-        var divider = document.querySelector('.page-divider');
-        var extra = document.querySelector('.extra-wrapper.page-header');
+        var projectPages = document.getElementById('projectPages');
+        var extras = document.querySelectorAll('.page-divider, .extra-wrapper.page-header');
         var pageHeader = document.getElementById('page-header-578d20eaf5e2317f09d41e18');
-        if (!header || !topNav || !page) return;
 
-        header.style.setProperty('width', '100%', 'important');
-        header.style.setProperty('text-align', 'center', 'important');
-        header.style.setProperty('margin-top', '40px', 'important');
-        header.style.setProperty('margin-bottom', '0', 'important');
-        header.style.setProperty('padding', '0', 'important');
-        header.style.setProperty('position', 'relative', 'important');
-        header.style.setProperty('top', '0', 'important');
-        header.style.setProperty('left', '0', 'important');
-        header.style.setProperty('transform', 'none', 'important');
-
-        topNav.style.setProperty('width', '100%', 'important');
-        topNav.style.setProperty('text-align', 'center', 'important');
-        topNav.style.setProperty('margin-top', '12px', 'important');
-        topNav.style.setProperty('margin-bottom', '0', 'important');
-        topNav.style.setProperty('padding', '0', 'important');
-        topNav.style.setProperty('position', 'relative', 'important');
-        topNav.style.setProperty('top', '0', 'important');
-        topNav.style.setProperty('left', '0', 'important');
-        topNav.style.setProperty('transform', 'none', 'important');
-
-        page.style.setProperty('margin-top', '10px', 'important');
-        page.style.setProperty('padding-top', '0', 'important');
-
-        if (divider) {
-          divider.style.setProperty('margin', '0', 'important');
-          divider.style.setProperty('padding', '0', 'important');
-          divider.style.setProperty('height', '0', 'important');
-          divider.style.setProperty('border', '0', 'important');
+        if (page) {
+          page.style.setProperty('margin-top', '0', 'important');
+          page.style.setProperty('padding-top', '0', 'important');
         }
-        if (extra) {
-          extra.style.setProperty('margin', '0', 'important');
-          extra.style.setProperty('padding', '0', 'important');
-          extra.style.setProperty('height', '0', 'important');
-          extra.style.setProperty('min-height', '0', 'important');
-          extra.style.setProperty('overflow', 'hidden', 'important');
-          extra.style.setProperty('border', '0', 'important');
+
+        if (projectPages) {
+          projectPages.style.setProperty('margin', '0', 'important');
+          projectPages.style.setProperty('padding', '0', 'important');
+          projectPages.style.setProperty('height', '0', 'important');
+          projectPages.style.setProperty('min-height', '0', 'important');
+          projectPages.style.setProperty('overflow', 'hidden', 'important');
         }
+
+        extras.forEach(function(el) {
+          el.style.setProperty('margin', '0', 'important');
+          el.style.setProperty('padding', '0', 'important');
+          el.style.setProperty('height', '0', 'important');
+          el.style.setProperty('min-height', '0', 'important');
+          el.style.setProperty('line-height', '0', 'important');
+          el.style.setProperty('overflow', 'hidden', 'important');
+          el.style.setProperty('border', '0', 'important');
+        });
+
         if (pageHeader) {
           pageHeader.style.setProperty('margin', '0', 'important');
           pageHeader.style.setProperty('padding', '0', 'important');
           pageHeader.style.setProperty('height', '0', 'important');
           pageHeader.style.setProperty('min-height', '0', 'important');
+          pageHeader.style.setProperty('line-height', '0', 'important');
           pageHeader.style.setProperty('overflow', 'hidden', 'important');
           pageHeader.style.setProperty('border', '0', 'important');
         }
       }
 
-      window.addEventListener('load', pinHeaderLikeStudio);
-      document.addEventListener('DOMContentLoaded', pinHeaderLikeStudio);
-      setTimeout(pinHeaderLikeStudio, 50);
-      setTimeout(pinHeaderLikeStudio, 250);
-      setTimeout(pinHeaderLikeStudio, 800);
+      window.addEventListener('load', stabilizeEphemere);
+      document.addEventListener('DOMContentLoaded', stabilizeEphemere);
+      setTimeout(stabilizeEphemere, 50);
+      setTimeout(stabilizeEphemere, 250);
+      setTimeout(stabilizeEphemere, 800);
+      setTimeout(stabilizeEphemere, 1500);
     })();
   </script>
 </body>
