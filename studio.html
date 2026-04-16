@@ -12,11 +12,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #FAFAF8;
 }
-.container {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 30px;
-}
 
     /* ===== HEADER / LOGO / NAV ===== */
     #header {
@@ -63,17 +58,20 @@ body {
       opacity: 0.7;
     }
 
+    /* ===== WRAPPER COMMUN photos + texte ===== */
+    .page-wrapper {
+      width: 100%;
+      max-width: 1206px;
+      margin: 0 auto;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
+
     /* ===== GRILLE 3 PHOTOS ===== */
     .studio-photos {
       display: flex;
       gap: 18px;
       margin-top: 34px;
-      width: 100%;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 30px;
-      box-sizing: border-box;
     }
 
     .studio-photos a {
@@ -98,15 +96,6 @@ body {
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    @media (max-width: 640px) {
-      .studio-photos {
-        flex-direction: column;
-        gap: 14px;
-        padding: 0 18px;
-        margin-top: 24px;
-      }
     }
 
     /* ===== CONTENU STUDIO ===== */
@@ -183,6 +172,20 @@ body {
         background-position: 50% 20%;
       }
     }
+
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding: 0 18px;
+      }
+      .studio-photos {
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .studio-photos .photo-wrap {
+        padding-bottom: 66%;
+      }
+    }
   </style>
   <link rel="stylesheet" href="mobile.css">
 </head>
@@ -210,26 +213,29 @@ body {
   </div>
 </header>
 
-<!-- GRILLE 3 PHOTOS -->
-<div class="studio-photos">
-  <a href="interieur.html">
-    <div class="photo-wrap">
-      <img src="images/home1.jpg" alt="Intérieur">
-    </div>
-  </a>
-  <a href="ephemere.html">
-    <div class="photo-wrap">
-      <img src="images/ephehome5.jpg" alt="Éphémère">
-    </div>
-  </a>
-  <a href="rehabilitation.html">
-    <div class="photo-wrap">
-      <img src="images/rehabhome3.jpg" alt="Réhabilitation">
-    </div>
-  </a>
-</div>
+<!-- WRAPPER COMMUN : photos + texte alignés ensemble -->
+<div class="page-wrapper">
 
-<div class="container">
+  <!-- GRILLE 3 PHOTOS -->
+  <div class="studio-photos">
+    <a href="interieur.html">
+      <div class="photo-wrap">
+        <img src="images/home1.jpg" alt="Intérieur">
+      </div>
+    </a>
+    <a href="ephemere.html">
+      <div class="photo-wrap">
+        <img src="images/ephehome5.jpg" alt="Éphémère">
+      </div>
+    </a>
+    <a href="rehabilitation.html">
+      <div class="photo-wrap">
+        <img src="images/rehabhome3.jpg" alt="Réhabilitation">
+      </div>
+    </a>
+  </div>
+
+  <!-- TEXTE -->
   <div class="studio-content">
 
     <h3>Studio</h3>
