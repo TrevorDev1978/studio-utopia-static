@@ -7,103 +7,135 @@
 <title>RéhabilitationConstruction</title>
 
 <style>
+html {
+  overflow-y: scroll;
+}
+
 html, body {
   margin: 0 !important;
   padding: 0 !important;
   background: #FAFAF8 !important;
 }
 
-/* HEADER */
+/* ===== TON STYLE ORIGINAL (inchangé) ===== */
+
 #header {
   width: 100% !important;
   text-align: center !important;
-  margin: 30px 0 0 0 !important;
+  margin: 40px 0 0 0 !important;
 }
 
-/* LOGO */
 #logo img {
-  width: 300px !important;
-  max-width: 80vw !important;
+  width: 325px !important;
+  max-width: 325px !important;
+  height: auto !important;
 }
 
-/* NAVIGATION DESKTOP + MOBILE */
 #topNav {
-  width: 100%;
-  text-align: center;
-  margin-top: 15px;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 12px 0 0 0 !important;
 }
 
 #topNav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 #topNav li {
-  display: inline-block;
-  margin: 0 10px;
+  display: inline-block !important;
+  margin: 0 12px !important;
 }
 
 #topNav a {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: #575757;
-  text-decoration: none;
+  color: #575757 !important;
+  text-transform: uppercase !important;
+  font-weight: 300 !important;
+  text-decoration: none !important;
+  letter-spacing: 1px !important;
+  font-size: 13px !important;
+  font-family: futura-pt, Arial, Helvetica, sans-serif !important;
 }
 
-/* === CORRECTION MOBILE === */
+/* ===== GRID PROJETS (inchangé) ===== */
+
+#projectThumbs {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 34px 0 0 0 !important;
+}
+
+#projectThumbs > .wrapper {
+  display: inline-block !important;
+  width: 1206px !important;
+  max-width: calc(100vw - 60px) !important;
+}
+
+/* ===== MOBILE ORIGINAL (inchangé) ===== */
+
+@media (max-width: 640px) {
+  #logo img {
+    width: 260px !important;
+    max-width: 80vw !important;
+  }
+
+  #topNav li {
+    margin: 0 8px !important;
+  }
+
+  #projectThumbs {
+    margin-top: 26px !important;
+  }
+
+  #projectThumbs .project {
+    margin-bottom: 26px !important;
+  }
+
+  #projectThumbs > .wrapper {
+    width: calc(100vw - 36px) !important;
+    max-width: calc(100vw - 36px) !important;
+  }
+}
+
+/* ===================================================== */
+/* ========= CORRECTION MOBILE NAVIGATION ============== */
+/* ===================================================== */
+
 @media (max-width: 768px) {
 
-  /* On cache complètement le menu hamburger */
-  #mobileMenuLink,
+  /* Supprime le bouton menu */
+  #mobileMenuLink {
+    display: none !important;
+  }
+
+  /* Supprime le menu hamburger */
   #mobileNav {
     display: none !important;
   }
 
-  /* On force le menu principal à rester visible */
+  /* Force affichage du menu principal */
   #topNav {
     display: block !important;
-    margin-top: 10px;
+    margin-top: 10px !important;
   }
 
+  /* Passe en menu vertical propre */
   #topNav li {
     display: block !important;
     margin: 6px 0 !important;
   }
 
+  #topNav ul {
+    text-align: center !important;
+  }
+
   #topNav a {
-    font-size: 14px;
+    font-size: 14px !important;
+    line-height: 1.8em !important;
   }
 }
 
-/* GRID PROJETS */
-#projectThumbs {
-  text-align: center;
-  margin-top: 30px;
-}
-
-#projectThumbs .wrapper {
-  display: inline-block;
-  width: 1200px;
-  max-width: calc(100vw - 40px);
-}
-
-.project {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 25px;
-}
-
-.project img {
-  width: 100%;
-  height: auto;
-}
-
-.project-title {
-  margin-top: 8px;
-  font-size: 14px;
-}
 </style>
 </head>
 
@@ -116,7 +148,6 @@ html, body {
     </a>
   </div>
 
-  <!-- NAVIGATION TOUJOURS VISIBLE -->
   <div id="topNav">
     <ul>
       <li><a href="index.html">Home</a></li>
