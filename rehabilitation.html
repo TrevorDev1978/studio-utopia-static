@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>RéhabilitationConstruction</title>
+
+<style>
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #FAFAF8 !important;
+}
+
+/* HEADER */
+#header {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 30px 0 0 0 !important;
+}
+
+/* LOGO */
+#logo img {
+  width: 300px !important;
+  max-width: 80vw !important;
+}
+
+/* NAVIGATION DESKTOP + MOBILE */
+#topNav {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#topNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#topNav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#topNav a {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #575757;
+  text-decoration: none;
+}
+
+/* === CORRECTION MOBILE === */
+@media (max-width: 768px) {
+
+  /* On cache complètement le menu hamburger */
+  #mobileMenuLink,
+  #mobileNav {
+    display: none !important;
+  }
+
+  /* On force le menu principal à rester visible */
+  #topNav {
+    display: block !important;
+    margin-top: 10px;
+  }
+
+  #topNav li {
+    display: block !important;
+    margin: 6px 0 !important;
+  }
+
+  #topNav a {
+    font-size: 14px;
+  }
+}
+
+/* GRID PROJETS */
+#projectThumbs {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#projectThumbs .wrapper {
+  display: inline-block;
+  width: 1200px;
+  max-width: calc(100vw - 40px);
+}
+
+.project {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+}
+
+.project-title {
+  margin-top: 8px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+  <div id="logo">
+    <a href="index.html">
+      <img src="https://images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w">
+    </a>
+  </div>
+
+  <!-- NAVIGATION TOUJOURS VISIBLE -->
+  <div id="topNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interieur.html">Intérieur</a></li>
+      <li><a href="ephemere.html">Éphémère</a></li>
+      <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+      <li><a href="press.html">Presse</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="instagram.html">Instagram</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section id="projectThumbs">
+  <div class="wrapper">
+
+    <a class="project" href="/anatole.html">
+      <img src="images/home3.jpg">
+      <div class="project-title">Epipremnum</div>
+    </a>
+
+    <a class="project" href="/aurea.html">
+      <img src="images/rehabhome2.jpg">
+      <div class="project-title">Pino & Maracuja</div>
+    </a>
+
+    <a class="project" href="/hab22.html">
+      <img src="images/rehabhome3.jpg">
+      <div class="project-title">Transitions</div>
+    </a>
+
+    <a class="project" href="/lemaitre-rigoles.html">
+      <img src="images/rehabhome4.jpg">
+      <div class="project-title">735</div>
+    </a>
+
+    <a class="project" href="/ritma.html">
+      <img src="images/rehabhome5.jpg">
+      <div class="project-title">Ritma</div>
+    </a>
+
+    <a class="project" href="/telepherique.html">
+      <img src="images/rehabhome6.jpg">
+      <div class="project-title">Ceu de Rocinha</div>
+    </a>
+
+  </div>
+</section>
+
+</body>
+</html>
