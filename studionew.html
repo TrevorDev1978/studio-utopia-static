@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+body {
+  margin: 0;
+  padding-top: 11;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #FAFAF8;
+}
+
+    /* ===== HEADER / LOGO / NAV ===== */
+    #header {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+    #logo {
+      text-align: center;
+    }
+    #logo img {
+      display: block;
+      margin: 0 auto;
+      width: 325px;
+      height: auto;
+      max-width: 325px;
+    }
+    #topNav {
+      width: 100%;
+      text-align: center;
+      margin-top: 21px;
+    }
+    #topNav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #topNav li {
+      display: inline-block;
+      margin: 0 12px;
+    }
+    #topNav a {
+      color: #575757;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+      line-height: 1.6em;
+    }
+    #topNav a:hover {
+      opacity: 0.7;
+    }
+
+    /* ===== WRAPPER COMMUN photos + texte ===== */
+    .page-wrapper {
+      width: 100%;
+      max-width: 1206px;
+      margin: 0 auto;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
+
+    /* ===== GRILLE 3 PHOTOS ===== */
+    .studio-photos {
+      display: flex;
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .studio-photos a {
+      flex: 1 1 0;
+      display: block;
+      text-decoration: none;
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .studio-photos .photo-wrap {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 0;
+      padding-bottom: 66%;
+      overflow: hidden;
+    }
+
+    .studio-photos .photo-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== CONTENU STUDIO ===== */
+    .studio-content {
+      margin-top: 60px;
+      font-size: 14px;
+      line-height: 1.8em;
+      color: #000;
+    }
+
+    .studio-content h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      margin-top: 48px;
+    }
+
+    .studio-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .studio-content p {
+      margin: 0 0 18px 0;
+      text-align: justify;
+    }
+
+    /* ===== BIO : texte + photo ===== */
+    .bio-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .bio-text {
+      flex: 0 0 560px;
+      min-width: 0;
+    }
+
+    .bio-text p {
+      margin: 0 0 18px 0;
+    }
+
+    .bio-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-image {
+      flex: 0 0 380px;
+    }
+
+    #bioImageBox {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      background: url('images/laure.jpg') 50% 18% / cover no-repeat;
+    }
+
+    @media (max-width: 980px) {
+      .bio-wrapper {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .bio-text,
+      .bio-image {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+      #bioImageBox {
+        height: 360px !important;
+        min-height: 360px;
+        background-position: 50% 20%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding: 0 18px;
+      }
+
+      .studio-photos {
+        display: block !important;
+        margin-top: 24px;
+      }
+
+      .studio-photos a {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        min-width: 0 !important;
+        margin: 0 0 14px 0 !important;
+        overflow: hidden !important;
+      }
+
+      .studio-photos a:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      .studio-photos .photo-wrap {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 0 !important;
+        padding-bottom: 66% !important;
+        overflow: hidden !important;
+      }
+
+      .studio-photos .photo-wrap img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+
+<header id="header">
+  <div id="logo">
+    <a href="index.html">
+      <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+    </a>
+  </div>
+
+  <div id="topNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="interieur.html">Intérieur</a></li>
+      <li><a href="ephemere.html">Éphémère</a></li>
+      <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+      <li><a href="press.html">Presse</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="instagram.html">Instagram</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- WRAPPER COMMUN : photos + texte alignés ensemble -->
+<div class="page-wrapper">
+
+  <!-- GRILLE 3 PHOTOS -->
+  <div class="studio-photos">
+    <a href="interieur.html">
+      <div class="photo-wrap">
+        <img src="images/home1.jpg" alt="Intérieur">
+      </div>
+    </a>
+    <a href="ephemere.html">
+      <div class="photo-wrap">
+        <img src="images/ephehome5.jpg" alt="Éphémère">
+      </div>
+    </a>
+    <a href="rehabilitation.html">
+      <div class="photo-wrap">
+        <img src="images/rehabhome3.jpg" alt="Réhabilitation">
+      </div>
+    </a>
+  </div>
+
+  <!-- TEXTE -->
+  <div class="studio-content">
+
+    <h3>Studio</h3>
+
+    <p>Atelier Utopia est un atelier d'architecture spécialisé dans la réhabilitation et la construction ancrées localement et soucieuses du préexistant. Fondé par Laure Marchand, l'atelier propose une approche personnalisée, créant des environnements facilement appropriables, parfaitement adaptés aux besoins de chaque client. Les clients bénéficient d'une expérience axée sur la collaboration et un service individualisé.</p>
+
+    <p>Architecte engagée dans le respect de l'écologie, Laure étudie et pondère l'ensemble des paramètres de chaque contexte donné afin de proposer une solution offrant le meilleur équilibre pour le programme donné. Elle a le souci de conservation du regard holistique sur le projet, de l'esquisse à la fin du chantier. Les propositions sur lesquelles elle peut aboutir peuvent être aussi sobres qu'originales voir inattendues. Elle peut utiliser dans ses projets une grande variété d'éléments, notamment issus du réemploi. Son esthétique repose davantage sur l'attrait visuel et émotionnel que sur un style.</p>
+
+    <p>Passionnée par le monde de l'art et les cultures, Laure est constamment à la recherche de façons innovantes d'intégrer toutes formes d'art dans les projets d'architecture qu'elle conçoit. Elle accorde un rôle majeur à l'impact émotionnel du bâtiment sur les personnes qui s'y tiendront ainsi qu'à faciliter leur processus d'habitation/d'incarnation du lieu.</p>
+
+    <p>« Pour l'homme, être, c'est habiter » Martin Heidegger.</p>
+
+    <p>Son portfolio comprend des projets dans le cadre de marchés publics autant que des projets pour des particuliers et à différentes échelles, de l'équipement à l'aménagement intérieur.</p>
+
+    <h3>Laure Marchand</h3>
+
+    <div class="bio-wrapper">
+      <div class="bio-text">
+        <p>Laure Marchand a grandi à Paris et s'est formée à l'école nationale d'architecture de Paris Belleville avant de passer une décennie à Rio de Janeiro. Au sein de l'agence ArquiTraço, elle a démarré sa carrière professionnelle en œuvrant au cœur des favelas, au service de projets publics urbains et architecturaux de grande ampleur. Elle rejoint ensuite le Comité Olympique de Rio2016 et découvre les spécificités de l'architecture éphémère.</p>
+
+        <p>Après deux collaborations fructueuses en France et au Brésil auprès d'agences d'architecture renommées tels que Nomade et Rua, elle construit et prend la tête du studio d'architecture interne au Comité Olympique de Paris2024.</p>
+
+        <p>En parallèle de ces collaborations sur ces projets à grande échelle, Laure Marchand a toujours exercé en libéral, notamment sur des projets de réhabilitation pour des clients particuliers. Elle excelle dans la maîtrise de la lumière naturelle, la justesse des échelles et la simplicité élégante.</p>
+      </div>
+
+      <div class="bio-image">
+        <div id="bioImageBox" aria-label="Laure Marchand"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  function syncBio(){
+    var text = document.querySelector('.bio-text');
+    var box  = document.getElementById('bioImageBox');
+    if(!text || !box) return;
+    if(window.innerWidth > 980){
+      var h = Math.max(text.offsetHeight, 320);
+      box.style.height = h + 'px';
+    } else {
+      box.style.height = '360px';
+    }
+  }
+  window.addEventListener('load', syncBio);
+  window.addEventListener('resize', syncBio);
+  setTimeout(syncBio, 0);
+})();
+</script>
+
+</body>
+</html>
