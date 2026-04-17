@@ -5,175 +5,253 @@
   <title>Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ✅ ON CHARGE D'ABORD mobile.css -->
-  <link rel="stylesheet" href="mobile.css">
-
-  <!-- ✅ TON CSS PASSE APRÈS (donc prioritaire) -->
   <style>
 body {
   margin: 0;
-  padding-top: 11px;
+  padding-top: 11;
   font-family: Arial, Helvetica, sans-serif;
   background: #FAFAF8;
 }
 
-/* ===== HEADER / LOGO / NAV ===== */
-#header {
-  width: 100%;
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 0;
-}
-#logo {
-  text-align: center;
-}
-#logo img {
-  display: block;
-  margin: 0 auto;
-  width: 325px;
-  height: auto;
-  max-width: 325px;
-}
-#topNav {
-  width: 100%;
-  text-align: center;
-  margin-top: 21px;
-}
-#topNav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#topNav li {
-  display: inline-block;
-  margin: 0 12px;
-}
-#topNav a {
-  color: #575757;
-  text-transform: uppercase;
-  font-weight: 300;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-size: 13px;
-  font-family: futura-pt, Arial, Helvetica, sans-serif;
-  line-height: 1.6em;
-}
-#topNav a:hover {
-  opacity: 0.7;
-}
+    /* ===== HEADER / LOGO / NAV ===== */
+    #header {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+    #logo {
+      text-align: center;
+    }
+    #logo img {
+      display: block;
+      margin: 0 auto;
+      width: 325px;
+      height: auto;
+      max-width: 325px;
+    }
+    #topNav {
+      width: 100%;
+      text-align: center;
+      margin-top: 21px;
+    }
+    #topNav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #topNav li {
+      display: inline-block;
+      margin: 0 12px;
+    }
+    #topNav a {
+      color: #575757;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+      line-height: 1.6em;
+    }
+    #topNav a:hover {
+      opacity: 0.7;
+    }
 
-/* ===== WRAPPER ===== */
-.page-wrapper {
-  width: 100%;
-  max-width: 1206px;
-  margin: 0 auto;
-  padding: 0 30px;
-  box-sizing: border-box;
-}
+    /* ===== WRAPPER COMMUN photos + texte ===== */
+    .page-wrapper {
+      width: 100%;
+      max-width: 1206px;
+      margin: 0 auto;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
 
-/* ===== PHOTOS ===== */
-.studio-photos {
-  display: flex;
-  gap: 18px;
-  margin-top: 34px;
-}
-.studio-photos a {
-  flex: 1 1 0;
-  display: block;
-  text-decoration: none;
-  overflow: hidden;
-}
-.studio-photos .photo-wrap {
-  position: relative;
-  width: 100%;
-  padding-bottom: 66%;
-  overflow: hidden;
-}
-.studio-photos .photo-wrap img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    /* ===== GRILLE 3 PHOTOS ===== */
+    .studio-photos {
+      display: flex;
+      gap: 18px;
+      margin-top: 34px;
+    }
 
-/* ===== TEXTE ===== */
-.studio-content {
-  margin-top: 60px;
-  font-size: 14px;
-  line-height: 1.8em;
-  color: #000;
-}
-.studio-content h3 {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-  margin-top: 48px;
-}
-.studio-content h3:first-child {
-  margin-top: 0;
-}
-.studio-content p {
-  margin: 0 0 18px 0;
-  text-align: justify;
-}
+    .studio-photos a {
+      flex: 1 1 0;
+      display: block;
+      text-decoration: none;
+      overflow: hidden;
+      min-width: 0;
+      position: relative;
+    }
 
-/* ===== BIO ===== */
-.bio-wrapper {
-  display: flex;
-  gap: 40px;
-  align-items: stretch;
-  margin-top: 24px;
-}
-.bio-text {
-  flex: 0 0 560px;
-}
-.bio-image {
-  flex: 0 0 380px;
-}
-#bioImageBox {
-  width: 100%;
-  height: 100%;
-  min-height: 320px;
-  background: url('images/laure.jpg') 50% 18% / cover no-repeat;
-}
+    .studio-photos .photo-wrap {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 0;
+      padding-bottom: 66%;
+      overflow: hidden;
+    }
 
-/* ===== TABLET ===== */
-@media (max-width: 980px) {
-  .bio-wrapper {
-    flex-direction: column;
-  }
-  #bioImageBox {
-    height: 360px !important;
-  }
-}
+    .studio-photos .photo-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-/* ===== MOBILE ===== */
-@media (max-width: 640px) {
+    /* ===== VOILE + LABEL SUR CHAQUE PHOTO ===== */
+    .photo-wrap .photo-veil {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.28);
+      z-index: 1;
+    }
 
-  .page-wrapper {
-    padding: 0 18px;
-  }
+    .photo-wrap .photo-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: #1a1a1a;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+    }
 
-  /* ✅ FIX FINAL */
-  .studio-photos {
-    display: flex !important;
-    flex-direction: column;
-    gap: 14px;
-  }
+    /* ===== CONTENU STUDIO ===== */
+    .studio-content {
+      margin-top: 60px;
+      font-size: 14px;
+      line-height: 1.8em;
+      color: #000;
+    }
 
-  .studio-photos img {
-    display: block !important;
-    width: 100%;
-    height: auto;
-  }
-}
+    .studio-content h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      margin-top: 48px;
+    }
+
+    .studio-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .studio-content p {
+      margin: 0 0 18px 0;
+      text-align: justify;
+    }
+
+    /* ===== BIO : texte + photo ===== */
+    .bio-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .bio-text {
+      flex: 0 0 560px;
+      min-width: 0;
+    }
+
+    .bio-text p {
+      margin: 0 0 18px 0;
+    }
+
+    .bio-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-image {
+      flex: 0 0 380px;
+    }
+
+    #bioImageBox {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      background: url('images/laure.jpg') 50% 18% / cover no-repeat;
+    }
+
+    @media (max-width: 980px) {
+      .bio-wrapper {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .bio-text,
+      .bio-image {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+      #bioImageBox {
+        height: 360px !important;
+        min-height: 360px;
+        background-position: 50% 20%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding: 0 18px;
+      }
+
+      .studio-photos {
+        display: block !important;
+        margin-top: 24px;
+      }
+
+      .studio-photos a {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        min-width: 0 !important;
+        margin: 0 0 14px 0 !important;
+        overflow: hidden !important;
+      }
+
+      .studio-photos a:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      .studio-photos .photo-wrap {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 0 !important;
+        padding-bottom: 66% !important;
+        overflow: hidden !important;
+      }
+
+      .studio-photos .photo-wrap img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+
+      .photo-label {
+        font-size: 13px !important;
+        letter-spacing: 2px !important;
+      }
+    }
   </style>
-
+  <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
@@ -181,7 +259,7 @@ body {
 <header id="header">
   <div id="logo">
     <a href="index.html">
-      <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w">
+      <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
     </a>
   </div>
 
@@ -199,27 +277,35 @@ body {
   </div>
 </header>
 
+<!-- WRAPPER COMMUN : photos + texte alignés ensemble -->
 <div class="page-wrapper">
 
+  <!-- GRILLE 3 PHOTOS -->
   <div class="studio-photos">
     <a href="interieur.html">
       <div class="photo-wrap">
-        <img src="images/home1.jpg">
+        <img src="images/home1.jpg" alt="Intérieur">
+        <div class="photo-veil"></div>
+        <span class="photo-label">Intérieur</span>
       </div>
     </a>
     <a href="ephemere.html">
       <div class="photo-wrap">
-        <img src="images/ephehome5.jpg">
+        <img src="images/ephehome5.jpg" alt="Éphémère">
+        <div class="photo-veil"></div>
+        <span class="photo-label">Éphémère</span>
       </div>
     </a>
     <a href="rehabilitation.html">
       <div class="photo-wrap">
-        <img src="images/rehabhome3.jpg">
+        <img src="images/rehabhome3.jpg" alt="Réhabilitation">
+        <div class="photo-veil"></div>
+        <span class="photo-label">Réhabilitation/<br>Construction</span>
       </div>
     </a>
   </div>
 
-
+  <!-- TEXTE -->
   <div class="studio-content">
 
     <h3>Studio</h3>
