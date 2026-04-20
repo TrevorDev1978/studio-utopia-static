@@ -13,22 +13,40 @@
       font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
-    html { overflow-y: scroll; }
+    html {
+      overflow-y: scroll;
+    }
 
+    /* ===== STRUCTURE ===== */
     #header {
       width: 100%;
       text-align: center;
       margin-top: 40px;
+      margin-bottom: 0;
+    }
+
+    #logo {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #logo h1 {
+      margin: 0;
+      padding: 0;
+      line-height: 1em;
     }
 
     #logo img {
       display: block;
       margin: 0 auto;
       width: 325px;
+      height: auto;
       max-width: 325px;
     }
 
     #topNav {
+      width: 100%;
       text-align: center;
       margin-top: 21px;
     }
@@ -51,14 +69,25 @@
       text-decoration: none;
       letter-spacing: 1px;
       font-size: 13px;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+      line-height: 1.6em;
     }
 
-    #topNav a:hover { opacity: 0.7; }
+    #topNav a:hover {
+      opacity: 0.7;
+    }
 
+    .page-divider {
+      height: 1px;
+      margin-top: 18px;
+      background: transparent;
+    }
+
+    /* ===== CONTENU CONTACT ===== */
     #page {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 30px 80px;
+      padding: 60px 30px 80px 30px;
     }
 
     .contact-wrapper {
@@ -71,60 +100,108 @@
       font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
-      margin-bottom: 32px;
+      letter-spacing: 1px;
+      margin: 0 0 32px 0;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
+    /* ===== FORMULAIRE ===== */
     .contact-form {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .field-row {
+    .contact-form .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
 
-    input, textarea {
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      box-sizing: border-box;
       border: none;
       border-bottom: 1px solid #aaa;
       padding: 8px 0;
       font-size: 13px;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+      color: #000;
       background: transparent;
       outline: none;
+      transition: border-color 0.2s ease;
     }
 
-    input:focus, textarea:focus {
+    .contact-form input:focus,
+    .contact-form textarea:focus {
       border-bottom-color: #000;
     }
 
-    textarea {
-      height: 120px;
-      resize: none;
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #aaa;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.5px;
     }
 
-    button {
+    .contact-form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
       background: #000;
       color: #fff;
       border: none;
       padding: 10px 28px;
       font-size: 11px;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
       text-transform: uppercase;
+      letter-spacing: 1px;
       cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.2s ease;
     }
 
-    button:hover { opacity: 0.75; }
+    .contact-form button:hover {
+      opacity: 0.75;
+    }
 
+    /* ===== COORDONNÉES ===== */
     .contact-info h3 {
       font-size: 13px;
+      font-weight: 600;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      letter-spacing: 1px;
+      margin: 0 0 16px 0;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
     .contact-info p {
       font-size: 13px;
-      margin: 0 0 6px;
+      line-height: 1.8em;
+      margin: 0 0 6px 0;
+      color: #000;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+    }
+
+    .contact-info a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .form-status {
+      font-size: 12px;
+      margin-top: 10px;
+      color: #575757;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
     @media (max-width: 768px) {
@@ -132,88 +209,79 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
-      .field-row {
+      .contact-form .field-row {
         grid-template-columns: 1fr;
       }
     }
   </style>
+  <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
+<div id="canvas">
 
-<header id="header">
-  <div id="logo">
-    <a href="index.html">
-      <img src="../images.squarespace-cdn.com/content/v1/578bbbc4/KBS_Logo.png">
-    </a>
-  </div>
-
-  <div id="topNav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="interieur.html">Intérieur</a></li>
-      <li><a href="ephemere.html">Éphémère</a></li>
-      <li><a href="rehabilitation.html">Réhabilitation</a></li>
-      <li><a href="press.html">Presse</a></li>
-      <li><a href="studio.html">Studio</a></li>
-      <li><a href="instagram.html">Instagram</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
-<section id="page">
-  <div class="contact-wrapper">
-
-    <div class="contact-left">
-      <h1>Contactez-nous</h1>
-
-      <!-- ✅ FORM FIXATO -->
-      <form class="contact-form" id="contactForm">
-
-        <div class="field-row">
-          <input type="text" name="prenom" placeholder="Prénom" required>
-          <input type="text" name="nom" placeholder="Nom" required>
-        </div>
-
-        <input type="email" name="email" placeholder="Adresse e-mail" required>
-        <input type="text" name="sujet" placeholder="Sujet" required>
-        <textarea name="message" placeholder="Message" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
+  <header id="header">
+    <div id="logo">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="../images.squarespace-cdn.com/content/v1/578bbbc546c3c4caeeca2291/23d8f6a2-5cbf-4fdf-a7b8-54ed70ed6710/KBS_Logo_horizontalb469.png?format=1000w" alt="kellybehun | STUDIO">
+        </a>
+      </h1>
     </div>
 
-    <div class="contact-info">
-      <h3>Studio Utopia</h3>
-      <p><a href="tel:+33637877149">+33 6 37 87 71 49</a></p>
-      <p><a href="mailto:contact@studio-utopia.fr">contact@studio-utopia.fr</a></p>
+    <div id="topNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="interieur.html">Intérieur</a></li>
+        <li><a href="ephemere.html">Éphémère</a></li>
+        <li><a href="rehabilitation.html">Réhabilitation/Construction</a></li>
+        <li><a href="press.html">Presse</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instagram.html">Instagram</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
+  </header>
 
-  </div>
-</section>
+  <div class="page-divider"></div>
 
-<!-- ✅ SCRIPT INVIO -->
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+  <section id="page">
+    <div class="contact-wrapper">
 
-  const data = Object.fromEntries(new FormData(this));
+      <div class="contact-left">
+        <h1>Contactez-nous</h1>
 
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
+        <form
+          class="contact-form"
+          action="contact.php"
+          method="POST"
+        >
+          <div class="field-row">
+            <input type="text" name="prenom" placeholder="Prénom" required>
+            <input type="text" name="nom" placeholder="Nom" required>
+          </div>
 
-  if (res.ok) {
-    alert("Message envoyé ✔");
-    this.reset();
-  } else {
-    alert("Erreur ❌");
-  }
-});
-</script>
+          <input type="email" name="email" placeholder="Adresse e-mail" required>
+          <input type="text" name="sujet" placeholder="Sujet" required>
+          <textarea name="message" placeholder="Message" required></textarea>
 
+          <button type="submit">Envoyer</button>
+
+          <div class="form-status">
+            <?php /* si ton serveur ne parse pas PHP dans .html, supprime juste cette ligne */ ?>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>Studio Utopia</h3>
+        <p><a href="tel:+33637877149">+33 6 37 87 71 49</a></p>
+        <p><a href="mailto:contact@studio-utopia.fr">contact@studio-utopia.fr</a></p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
 </body>
 </html>
