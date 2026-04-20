@@ -170,6 +170,28 @@
       opacity: 0.75;
     }
 
+    .contact-form button:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    .form-message {
+      min-height: 18px;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #575757;
+      font-family: futura-pt, Arial, Helvetica, sans-serif;
+    }
+
+    /* honeypot anti-bot */
+    .hp-field {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+    }
+
     /* ===== COORDONNÉES ===== */
     .contact-info h3 {
       font-size: 13px;
@@ -195,13 +217,6 @@
 
     .contact-info a:hover {
       text-decoration: underline;
-    }
-
-    .form-status {
-      font-size: 12px;
-      margin-top: 10px;
-      color: #575757;
-      font-family: futura-pt, Arial, Helvetica, sans-serif;
     }
 
     @media (max-width: 768px) {
@@ -251,11 +266,7 @@
       <div class="contact-left">
         <h1>Contactez-nous</h1>
 
-        <form
-          class="contact-form"
-          action="contact.php"
-          method="POST"
-        >
+        <form class="contact-form" id="contactForm" novalidate>
           <div class="field-row">
             <input type="text" name="prenom" placeholder="Prénom" required>
             <input type="text" name="nom" placeholder="Nom" required>
@@ -265,11 +276,11 @@
           <input type="text" name="sujet" placeholder="Sujet" required>
           <textarea name="message" placeholder="Message" required></textarea>
 
-          <button type="submit">Envoyer</button>
+          <!-- honeypot -->
+          <input class="hp-field" type="text" name="company" tabindex="-1" autocomplete="off">
 
-          <div class="form-status">
-            <?php /* si ton serveur ne parse pas PHP dans .html, supprime juste cette ligne */ ?>
-          </div>
+          <button type="submit" id="contactSubmit">Envoyer</button>
+          <div class="form-message" id="formMessage"></div>
         </form>
       </div>
 
@@ -283,5 +294,53 @@
   </section>
 
 </div>
+
+<script>
+  (function () {
+    const form = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("contactSubmit");
+    const formMessage = document.getElementById("formMessage");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      formMessage.textContent = "";
+
+      if (!form.reportValidity()) return;
+
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi...";
+
+      try {
+        const payload = Object.fromEntries(new FormData(form).entries());
+
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          throw new Error(data.error || "Erreur lors de l'envoi.");
+        }
+
+        form.reset();
+        formMessage.textContent = "Message envoyé.";
+      } catch (err) {
+        formMessage.textContent = err.message || "Erreur lors de l'envoi.";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+  })();
+</script>
 </body>
 </html>
