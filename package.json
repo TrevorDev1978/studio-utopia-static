@@ -1,0 +1,7 @@
+{
+  "name": "studio-utopia",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "latest"
+  }
+}
