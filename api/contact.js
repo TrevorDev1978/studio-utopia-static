@@ -18,7 +18,7 @@ export default {
     try {
       body = await request.json();
     } catch {
-      return json({ ok: false, error: "Requête invalide." }, 400);
+      return json({ ok: false, error: "JSON invalide." }, 400);
     }
 
     const prenom = clean(body.prenom);
@@ -26,19 +26,14 @@ export default {
     const email = clean(body.email);
     const sujet = clean(body.sujet);
     const message = clean(body.message);
-    const company = clean(body.company); // honeypot
+    const company = clean(body.company);
 
     if (company) {
       return json({ ok: true });
     }
 
     if (!prenom || !nom || !email || !sujet || !message) {
-      return json({ ok: false, error: "Merci de remplir tous les champs." }, 400);
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return json({ ok: false, error: "Adresse e-mail invalide." }, 400);
+      return json({ ok: false, error: "Champs manquants." }, 400);
     }
 
     const SMTP_HOST = process.env.SMTP_HOST;
@@ -48,22 +43,37 @@ export default {
     const CONTACT_TO = process.env.CONTACT_TO || process.env.SMTP_USER;
     const CONTACT_FROM = process.env.CONTACT_FROM || process.env.SMTP_USER;
 
-    if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !CONTACT_TO || !CONTACT_FROM) {
-      return json({ ok: false, error: "Configuration serveur manquante." }, 500);
+    const missing = [];
+    if (!SMTP_HOST) missing.push("SMTP_HOST");
+    if (!SMTP_PORT) missing.push("SMTP_PORT");
+    if (!SMTP_USER) missing.push("SMTP_USER");
+    if (!SMTP_PASS) missing.push("SMTP_PASS");
+    if (!CONTACT_TO) missing.push("CONTACT_TO");
+    if (!CONTACT_FROM) missing.push("CONTACT_FROM");
+
+    if (missing.length) {
+      console.error("CONTACT_ENV_MISSING", missing);
+      return json(
+        { ok: false, error: "Variables manquantes", missing },
+        500
+      );
     }
 
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: SMTP_PORT,
-      secure: SMTP_PORT === 465,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS
-      }
-    });
-
     try {
-      await transporter.sendMail({
+      const transporter = nodemailer.createTransport({
+        host: SMTP_HOST,
+        port: SMTP_PORT,
+        secure: SMTP_PORT === 465,
+        auth: {
+          user: SMTP_USER,
+          pass: SMTP_PASS
+        }
+      });
+
+      // Teste d'abord la connexion SMTP
+      await transporter.verify();
+
+      const info = await transporter.sendMail({
         from: `"Studio Utopia" <${CONTACT_FROM}>`,
         to: CONTACT_TO,
         replyTo: email,
@@ -79,11 +89,30 @@ export default {
         ].join("\n")
       });
 
-      return json({ ok: true });
+      console.log("CONTACT_SEND_OK", {
+        messageId: info.messageId,
+        response: info.response
+      });
+
+      return json({ ok: true, messageId: info.messageId, response: info.response });
     } catch (error) {
-      console.error("CONTACT_FORM_ERROR", error);
+      console.error("CONTACT_SEND_FAIL", {
+        message: error?.message,
+        code: error?.code,
+        command: error?.command,
+        response: error?.response,
+        responseCode: error?.responseCode
+      });
+
       return json(
-        { ok: false, error: "Impossible d'envoyer le message pour le moment." },
+        {
+          ok: false,
+          error: error?.message || "Erreur SMTP",
+          code: error?.code || null,
+          command: error?.command || null,
+          response: error?.response || null,
+          responseCode: error?.responseCode || null
+        },
         500
       );
     }
